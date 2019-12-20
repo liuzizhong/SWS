@@ -1,0 +1,1 @@
+².Supports/SwiftScan/LBXScanViewController.swift 2swiftX•h

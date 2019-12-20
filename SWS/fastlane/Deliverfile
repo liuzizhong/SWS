@@ -1,0 +1,17 @@
+# The Deliverfile allows you to store various App Store Connect metadata
+# For more information, check out the docs
+# https://docs.fastlane.tools/actions/deliver/
+
+#app_identifier("com.yuanrui.efficiency") # The bundle identifier of your app
+#apple_id("admin@mailqq.yuanruiteam.com") # Your Apple email address
+
+# 1 app_identifier
+app_identifier "com.yuanrui.efficiency"
+
+# 2 用户名,Apple ID电子邮件地址
+username "admin@mailqq.yuanruiteam.com"  
+
+
+skip_screenshots(true) 
+
+skip_metadata(true)

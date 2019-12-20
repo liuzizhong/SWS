@@ -1,0 +1,1 @@
+ÝKPods/QMUIKit/QMUIKit/QMUIComponents/QMUIScrollAnimator/QMUIScrollAnimator.h 2objcX.h

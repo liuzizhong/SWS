@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SW_ConstructionDetailBottomView" customModule="SWS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="109"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m3x-RX-WZ4" customClass="SW_BlueButton" customModule="SWS" customModuleProvider="target">
+                    <rect key="frame" x="15" y="5" width="165" height="44"/>
+                    <color key="backgroundColor" red="0.074509803920000006" green="0.46666666670000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="rGj-oV-8Lo"/>
+                    </constraints>
+                    <state key="normal" title="开工">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="startBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="ail-IA-sqa"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KqR-gh-uJJ">
+                    <rect key="frame" x="195" y="5" width="165" height="44"/>
+                    <state key="normal" title="完工"/>
+                    <connections>
+                        <action selector="completeBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="HCU-rM-m00"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="KqR-gh-uJJ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="6io-sr-BJz"/>
+                <constraint firstItem="m3x-RX-WZ4" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="HQg-fb-5xK"/>
+                <constraint firstItem="m3x-RX-WZ4" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="L9X-ul-GXd"/>
+                <constraint firstItem="KqR-gh-uJJ" firstAttribute="leading" secondItem="m3x-RX-WZ4" secondAttribute="trailing" constant="15" id="MDa-Tf-xWA"/>
+                <constraint firstItem="KqR-gh-uJJ" firstAttribute="height" secondItem="m3x-RX-WZ4" secondAttribute="height" id="S89-c7-w4C"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="KqR-gh-uJJ" secondAttribute="trailing" constant="15" id="TAI-zA-C2e"/>
+                <constraint firstItem="KqR-gh-uJJ" firstAttribute="width" secondItem="m3x-RX-WZ4" secondAttribute="width" id="mtq-s5-chv"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="completeBtn" destination="KqR-gh-uJJ" id="zaK-55-ot3"/>
+                <outlet property="startBtn" destination="m3x-RX-WZ4" id="hvd-JJ-Gnc"/>
+            </connections>
+            <point key="canvasLocation" x="138.40000000000001" y="122.78860569715144"/>
+        </view>
+    </objects>
+</document>

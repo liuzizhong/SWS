@@ -1,0 +1,22 @@
+//
+//  EaseRecordButton.h
+//  SWS
+//
+//  Created by jayway on 2018/5/29.
+//  Copyright © 2018年 yuanrui. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+/**
+ 该按钮的目的是取消放在页面底部时的延迟响应
+ 延迟是因为屏幕底部有系统的“上滑出现控制中心”的这个手势，所以就要至少一个时间区间来检测到底是点击还是滑动，也就会造成延迟。
+ */
+@interface EaseRecordButton : UIButton
+
+@property (weak, nonatomic) id hightlightTarget;
+@property (assign, nonatomic) SEL hightlightAction;
+
+-(instancetype)initWithTarget:(id)target Action:(SEL)action;
+
+@end

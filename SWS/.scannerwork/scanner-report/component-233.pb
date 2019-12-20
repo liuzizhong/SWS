@@ -1,0 +1,1 @@
+érSupports/PagingMenuController-master/Example/PagingMenuControllerDemoUITests/PagingMenuControllerDemoUITests.swift 2swiftX.h

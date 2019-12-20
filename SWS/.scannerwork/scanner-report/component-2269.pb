@@ -1,0 +1,1 @@
+Ý4Pods/OpenCV/opencv2.framework/Headers/features2d/hal :Ü

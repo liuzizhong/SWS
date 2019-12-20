@@ -1,0 +1,43 @@
+
+#import "NSObject+Json.h"
+
+@implementation NSObject (NSObject_JsonWriting)
+
+- (NSString *)JSONRepresentation {
+    NSError *error;
+    NSData *data = [NSJSONSerialization dataWithJSONObject:self options:kNilOptions error:&error];
+    if (error) {
+        NSLog(@"-JSONRepresentation failed. Error is: %@", error);
+    }
+    if (data && ![data isKindOfClass:[NSNull class]]) {
+        return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    }
+    return nil;
+}
+
+@end
+
+@implementation NSString (NSString_JsonParsing)
+
+- (id)JSONValue {
+    NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
+    return [data JSONValue];
+}
+
+@end
+
+@implementation NSData (NSData_JsonParsing)
+
+- (id)JSONValue {
+    if ([self isKindOfClass:[NSNull class]]) {
+        return nil;
+    }
+    NSError *error;
+    id value = [NSJSONSerialization JSONObjectWithData:self options:NSJSONReadingMutableContainers error:nil];
+    if (error) {
+        NSLog(@"-JSONValue failed. Error is: %@", error);
+    }
+    return value;
+}
+
+@end

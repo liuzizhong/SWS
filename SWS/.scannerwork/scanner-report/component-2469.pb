@@ -1,0 +1,1 @@
+¥ZPods/QMUIKit/QMUIKit/QMUIComponents/QMUIMultipleDelegates/NSObject+QMUIMultipleDelegates.h 2objcX2h

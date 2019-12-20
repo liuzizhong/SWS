@@ -1,0 +1,1 @@
+)Supports/Alamofire/Result.swift 2swiftX­h

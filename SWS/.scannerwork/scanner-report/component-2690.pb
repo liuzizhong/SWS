@@ -1,0 +1,1 @@
+‚OPods/SpreadsheetView/Framework/Sources/SpreadsheetView+CirclularScrolling.swift 2swiftXph

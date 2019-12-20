@@ -1,0 +1,2 @@
+ˇ
+êPods/NVActivityIndicatorView/NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationLineScalePulseOutRapid.swift 2swiftXCh

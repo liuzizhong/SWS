@@ -1,0 +1,1 @@
+ÖHSupports/PagingMenuController-master/Pod/Classes/Protocols/Pagable.swift 2swiftXh

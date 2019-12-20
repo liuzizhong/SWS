@@ -1,0 +1,1 @@
+¨-Supports/LTScrollView/LTAdvancedManager.swift 2swiftXþh

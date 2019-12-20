@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SW_GroupMemberCollectionViewCell" customModule="SWS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="65" height="82"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="65" height="82"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d7K-tp-e3G">
+                        <rect key="frame" x="5.5" y="0.0" width="54" height="54"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="54" id="eGn-8l-pan"/>
+                            <constraint firstAttribute="width" constant="54" id="o6J-2O-8Hy"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugO-um-Lf6">
+                        <rect key="frame" x="0.0" y="61" width="65" height="14.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="65" id="csx-rb-K6a"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsU-9V-3Ay">
+                        <rect key="frame" x="43.5" y="-5" width="21" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="5fL-1m-56l"/>
+                            <constraint firstAttribute="width" constant="21" id="GRu-0H-ba2"/>
+                        </constraints>
+                        <state key="normal" image="work_shut_down"/>
+                        <connections>
+                            <action selector="shouDownBtnClick:" destination="gTV-IL-0wX" eventType="touchUpInside" id="01Y-mO-Ooo"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="gsU-9V-3Ay" firstAttribute="trailing" secondItem="d7K-tp-e3G" secondAttribute="trailing" constant="5" id="31h-x4-2ys"/>
+                <constraint firstItem="ugO-um-Lf6" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Arr-5R-fQH"/>
+                <constraint firstItem="d7K-tp-e3G" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="QeM-cv-9ab"/>
+                <constraint firstItem="gsU-9V-3Ay" firstAttribute="top" secondItem="d7K-tp-e3G" secondAttribute="top" constant="-5" id="Z69-Ge-BHJ"/>
+                <constraint firstItem="d7K-tp-e3G" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="hnN-GO-S3J"/>
+                <constraint firstItem="ugO-um-Lf6" firstAttribute="top" secondItem="d7K-tp-e3G" secondAttribute="bottom" constant="7" id="xL7-Uu-F5z"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="65" height="82"/>
+            <connections>
+                <outlet property="iconImageView" destination="d7K-tp-e3G" id="IdC-RG-D0A"/>
+                <outlet property="nameLabel" destination="ugO-um-Lf6" id="k7a-mI-Omk"/>
+                <outlet property="shouDownBtn" destination="gsU-9V-3Ay" id="Mgi-bE-t3t"/>
+            </connections>
+            <point key="canvasLocation" x="40.799999999999997" y="69.265367316341838"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="work_shut_down" width="44" height="44"/>
+    </resources>
+</document>

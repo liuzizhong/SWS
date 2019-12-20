@@ -1,0 +1,1 @@
+Å/SWS/Global(å…¨å±€)/Models/SW_BadgeManager.swift 2swiftXÉh

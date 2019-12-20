@@ -1,0 +1,1 @@
+Ï:Pods/Charts/Source/Charts/Renderers/BarChartRenderer.swift 2swiftX´h

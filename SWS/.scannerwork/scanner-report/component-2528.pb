@@ -1,0 +1,1 @@
+à_Pods/QMUIKit/QMUIKit/QMUIComponents/QMUIScrollAnimator/QMUINavigationBarScrollingSnapAnimator.h 2objcXFh

@@ -1,0 +1,1 @@
+€‡Pods/NVActivityIndicatorView/NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallPulseRise.swift 2swiftXsh

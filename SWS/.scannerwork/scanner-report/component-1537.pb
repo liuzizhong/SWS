@@ -1,0 +1,1 @@
+ÅBPods/Charts/Source/Charts/Formatters/IndexAxisValueFormatter.swift 2swiftX<h

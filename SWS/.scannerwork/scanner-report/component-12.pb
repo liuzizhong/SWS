@@ -1,0 +1,1 @@
+ Supports/SwiftyJSON/SwiftyJSON.h 2objcX h

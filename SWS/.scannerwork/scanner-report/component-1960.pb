@@ -1,0 +1,1 @@
+¨KPods/OpenCV/opencv2.framework/Versions/Current/Headers/core/hal/interface.h 2objcX·h

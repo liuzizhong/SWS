@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SW_RepairItemHeaderView" customModule="SWS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="项目编号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMW-VH-Zo3">
+                    <rect key="frame" x="50" y="19.5" width="80" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="a0H-F4-yBJ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="项目名称" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYQ-Sk-Tgy">
+                    <rect key="frame" x="130" y="19.5" width="180" height="17"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="工时" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pv6-WB-pQH">
+                    <rect key="frame" x="310" y="19.5" width="50" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="9bI-ef-eTI"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vfB-Ox-MT4">
+                    <rect key="frame" x="0.0" y="55.5" width="375" height="0.5"/>
+                    <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="45c-TC-eAX"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="pv6-WB-pQH" secondAttribute="trailing" constant="15" id="3D6-0k-zNK"/>
+                <constraint firstItem="HYQ-Sk-Tgy" firstAttribute="leading" secondItem="RMW-VH-Zo3" secondAttribute="trailing" id="8eo-Ko-Bgu"/>
+                <constraint firstItem="RMW-VH-Zo3" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Kfx-Nx-ynD"/>
+                <constraint firstItem="RMW-VH-Zo3" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="50" id="T5q-F8-EHz"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="vfB-Ox-MT4" secondAttribute="trailing" id="X2c-fo-t52"/>
+                <constraint firstItem="pv6-WB-pQH" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Ykd-ez-A7X"/>
+                <constraint firstItem="vfB-Ox-MT4" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ZJH-Cg-Phv"/>
+                <constraint firstItem="pv6-WB-pQH" firstAttribute="leading" secondItem="HYQ-Sk-Tgy" secondAttribute="trailing" id="hSw-Md-FJc"/>
+                <constraint firstItem="HYQ-Sk-Tgy" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="pA7-Dv-wba"/>
+                <constraint firstAttribute="bottom" secondItem="vfB-Ox-MT4" secondAttribute="bottom" id="tDt-6o-x2D"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="138.40000000000001" y="149.32533733133434"/>
+        </view>
+    </objects>
+</document>

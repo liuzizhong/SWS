@@ -1,0 +1,11 @@
+//
+//  KVO.h
+//  CloudOffice
+//
+//  Created by 王珊 on 3/22/16.
+//  Copyright © 2016 115.com. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+#define observe(tarObj,keypath) [self observe:tarObj keyPath:(((void)(NO && ((void)tarObj.keypath, NO)), @#keypath)) block:^(typeof(self) _Nullable self, id  _Nonnull oldValue, id  _Nonnull value)

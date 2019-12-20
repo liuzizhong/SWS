@@ -1,0 +1,1 @@
+ÅDPods/SpreadsheetView/Framework/Sources/SpreadsheetView+Touches.swift 2swiftXáh

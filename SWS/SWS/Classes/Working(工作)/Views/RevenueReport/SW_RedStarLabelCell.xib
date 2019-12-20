@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="49" id="KGk-i7-Jjw" customClass="SW_RedStarLabelCell" customModule="SWS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="48.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="revenue_asterisk" translatesAutoresizingMaskIntoConstraints="NO" id="jI1-U0-I5t">
+                        <rect key="frame" x="15" y="21.5" width="6" height="6"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Kp-Bb-MLv">
+                        <rect key="frame" x="21" y="16" width="36" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.074509803920000006" green="0.074509803920000006" blue="0.074509803920000006" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSC-dv-Cn3">
+                        <rect key="frame" x="266" y="16" width="36" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.74509803921568629" green="0.74509803921568629" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Main_NextPage" translatesAutoresizingMaskIntoConstraints="NO" id="VCd-1M-VaB">
+                        <rect key="frame" x="302" y="19" width="10" height="11"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="10" id="1F3-63-bDs"/>
+                            <constraint firstAttribute="height" constant="11" id="m2K-XP-y2h"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="WSC-dv-Cn3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7Kp-Bb-MLv" secondAttribute="trailing" constant="10" id="4Ys-gm-Ijv"/>
+                    <constraint firstItem="jI1-U0-I5t" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="AIa-Rd-ru5"/>
+                    <constraint firstItem="jI1-U0-I5t" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="BMy-5O-pGW"/>
+                    <constraint firstItem="7Kp-Bb-MLv" firstAttribute="leading" secondItem="jI1-U0-I5t" secondAttribute="trailing" id="Bab-kW-d5i"/>
+                    <constraint firstAttribute="trailing" secondItem="VCd-1M-VaB" secondAttribute="trailing" constant="8" id="FXL-pc-iFG"/>
+                    <constraint firstItem="WSC-dv-Cn3" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Prz-Hi-CJA"/>
+                    <constraint firstItem="VCd-1M-VaB" firstAttribute="leading" secondItem="WSC-dv-Cn3" secondAttribute="trailing" id="VSq-M1-On5"/>
+                    <constraint firstItem="7Kp-Bb-MLv" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="as6-rB-fkK"/>
+                    <constraint firstItem="VCd-1M-VaB" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="v6W-A1-e6J"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="nextPageImgView" destination="VCd-1M-VaB" id="tKB-Lc-8pd"/>
+                <outlet property="redStarImgView" destination="jI1-U0-I5t" id="v6R-M3-iKE"/>
+                <outlet property="titleLb" destination="7Kp-Bb-MLv" id="5rJ-GU-p4H"/>
+                <outlet property="valueLb" destination="WSC-dv-Cn3" id="Zsg-xV-OxO"/>
+            </connections>
+            <point key="canvasLocation" x="-346" y="81.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Main_NextPage" width="10" height="11"/>
+        <image name="revenue_asterisk" width="6" height="6"/>
+    </resources>
+</document>

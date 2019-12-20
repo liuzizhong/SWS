@@ -1,0 +1,1 @@
+**Supports/Alamofire/ParameterEncoding.swift 2swiftXäh

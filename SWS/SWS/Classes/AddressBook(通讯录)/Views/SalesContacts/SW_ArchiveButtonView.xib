@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SW_ArchiveButtonView" customModule="SWS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="108"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Rp-QL-NG6">
+                    <rect key="frame" x="132.5" y="32" width="110" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="Fe5-kx-UCf"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="tintColor" red="0.074509803920000006" green="0.46666666670000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="快速建档">
+                        <color key="titleColor" red="0.074509803920000006" green="0.46666666670000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="buttonDidClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="YzO-PS-uum"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="0Rp-QL-NG6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="132.5" id="GsJ-Xd-VpX"/>
+                <constraint firstItem="0Rp-QL-NG6" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="iP8-iK-yqa"/>
+                <constraint firstItem="0Rp-QL-NG6" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="rNK-gZ-LNE"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="0Rp-QL-NG6" secondAttribute="trailing" constant="132.5" id="uyy-jt-lwu"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="button" destination="0Rp-QL-NG6" id="DoZ-2Q-ZO6"/>
+                <outlet property="leftConstraint" destination="GsJ-Xd-VpX" id="6bI-gJ-Kyz"/>
+                <outlet property="rightConstraint" destination="uyy-jt-lwu" id="VIv-Cn-tnA"/>
+            </connections>
+            <point key="canvasLocation" x="47.200000000000003" y="-51.27436281859071"/>
+        </view>
+    </objects>
+</document>

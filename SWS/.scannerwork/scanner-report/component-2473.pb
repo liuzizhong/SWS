@@ -1,0 +1,1 @@
+©CPods/QMUIKit/QMUIKit/QMUIComponents/QMUIBadge/UIBarItem+QMUIBadge.h 2objcXIh

@@ -1,0 +1,1 @@
+Þ[Pods/QMUIKit/QMUIKit/QMUIComponents/QMUIScrollAnimator/QMUINavigationBarScrollingAnimator.h 2objcXsh

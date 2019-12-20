@@ -1,0 +1,6 @@
+app_identifier("com.yuanrui.efficiency") # The bundle identifier of your app
+apple_id("admin@mailqq.yuanruiteam.com") # Your Apple email address
+team_id "B4Y46Y4CQV"
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile

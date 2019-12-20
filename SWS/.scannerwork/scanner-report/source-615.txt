@@ -1,0 +1,39 @@
+//
+//  EaseRecordButton.m
+//  SWS
+//
+//  Created by jayway on 2018/5/29.
+//  Copyright © 2018年 yuanrui. All rights reserved.
+//
+
+#import "EaseRecordButton.h"
+
+@implementation EaseRecordButton
+
+-(instancetype)initWithTarget:(id)target Action:(SEL)action {
+    self = [super init];
+    if (self) {
+        self.accessibilityIdentifier = @"chatbar";
+        _hightlightTarget = target;
+        _hightlightAction = action;
+    }
+    return self;
+}
+
+//该事件在点击时立刻就会响应
+-(BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event{
+    BOOL inside = [super pointInside: point withEvent: event];
+    
+    if (inside && !self.isHighlighted && event.type == UIEventTypeTouches)
+    {
+        self.highlighted = YES;
+        
+        //这里用block也可以，把事件传递出去就好。
+        if (_hightlightTarget && [_hightlightTarget respondsToSelector:_hightlightAction]) {
+            [_hightlightTarget performSelector:_hightlightAction withObject:self];
+        }
+    }
+    return inside;
+}
+
+@end

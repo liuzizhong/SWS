@@ -1,0 +1,1 @@
+¸=Pods/OpenCV/opencv2.framework/Headers/objdetect/objdetect_c.h 2objcX§h

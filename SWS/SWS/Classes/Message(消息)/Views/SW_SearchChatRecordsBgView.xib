@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="ms9-Mj-6e8" customClass="SW_SearchChatRecordsBgView" customModule="SWS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="快速搜索聊天内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2PT-MB-v7i">
+                    <rect key="frame" x="130.5" y="109" width="114.5" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xW7-zI-oTQ">
+                    <rect key="frame" x="187" y="168" width="1" height="20"/>
+                    <color key="backgroundColor" red="0.63921568630000003" green="0.63921568630000003" blue="0.63921568630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="1" id="IyA-Mz-VYa"/>
+                        <constraint firstAttribute="height" constant="20" id="uV4-Qd-AwI"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WkU-BN-YGq">
+                    <rect key="frame" x="83" y="146" width="64" height="64"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal" image="chatsearch_datebtn">
+                        <color key="titleColor" red="0.63921568630000003" green="0.63921568630000003" blue="0.63921568630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="dateBtnAction:" destination="ms9-Mj-6e8" eventType="touchUpInside" id="riq-jr-9aW"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="96b-T6-NEb">
+                    <rect key="frame" x="228" y="146" width="64" height="64"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal" image="chatsearch_pic">
+                        <color key="titleColor" red="0.63921568630000003" green="0.63921568630000003" blue="0.63921568630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="picBtnAction:" destination="ms9-Mj-6e8" eventType="touchUpInside" id="xqp-WK-vMy"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ki7-lL-hIP">
+                    <rect key="frame" x="100.5" y="215" width="29" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="图片" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G9W-HF-BAX">
+                    <rect key="frame" x="245.5" y="215" width="29" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="G9W-HF-BAX" firstAttribute="centerX" secondItem="96b-T6-NEb" secondAttribute="centerX" id="3Rc-Kb-aJX"/>
+                <constraint firstItem="2PT-MB-v7i" firstAttribute="centerX" secondItem="ms9-Mj-6e8" secondAttribute="centerX" id="97E-yS-0JH"/>
+                <constraint firstItem="xW7-zI-oTQ" firstAttribute="top" secondItem="lal-Kt-HtV" secondAttribute="top" constant="148" id="Bom-sQ-67R"/>
+                <constraint firstItem="2PT-MB-v7i" firstAttribute="top" secondItem="lal-Kt-HtV" secondAttribute="top" constant="89" id="Fyf-w8-6cs"/>
+                <constraint firstItem="ki7-lL-hIP" firstAttribute="top" secondItem="WkU-BN-YGq" secondAttribute="bottom" constant="5" id="Gxf-lA-eMZ"/>
+                <constraint firstItem="96b-T6-NEb" firstAttribute="leading" secondItem="xW7-zI-oTQ" secondAttribute="trailing" constant="40" id="e8E-w7-VG3"/>
+                <constraint firstItem="xW7-zI-oTQ" firstAttribute="leading" secondItem="WkU-BN-YGq" secondAttribute="trailing" constant="40" id="lb9-Qp-C6F"/>
+                <constraint firstItem="ki7-lL-hIP" firstAttribute="centerX" secondItem="WkU-BN-YGq" secondAttribute="centerX" id="vKo-cs-4JQ"/>
+                <constraint firstItem="xW7-zI-oTQ" firstAttribute="centerX" secondItem="ms9-Mj-6e8" secondAttribute="centerX" id="wX4-wa-qLu"/>
+                <constraint firstItem="WkU-BN-YGq" firstAttribute="centerY" secondItem="xW7-zI-oTQ" secondAttribute="centerY" id="ydQ-Zg-17T"/>
+                <constraint firstItem="G9W-HF-BAX" firstAttribute="top" secondItem="96b-T6-NEb" secondAttribute="bottom" constant="5" id="ykF-cj-LGU"/>
+                <constraint firstItem="96b-T6-NEb" firstAttribute="centerY" secondItem="xW7-zI-oTQ" secondAttribute="centerY" id="zjo-lK-zzb"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="lal-Kt-HtV"/>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="chatsearch_datebtn" width="64" height="64"/>
+        <image name="chatsearch_pic" width="64" height="64"/>
+    </resources>
+</document>

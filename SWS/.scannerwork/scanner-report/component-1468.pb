@@ -1,0 +1,1 @@
+¼"Pods/SevenSwitch/SevenSwitch.swift 2swiftX h

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SW_CarInStockFilterHeaderView" customModule="SWS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="86D-qu-ekd" customClass="SW_ShaDowBlueBtn" customModule="SWS" customModuleProvider="target">
+                    <rect key="frame" x="15" y="10" width="75" height="35"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="P5o-HJ-C2k"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="i3W-Oy-pQR"/>
+                    </constraints>
+                </view>
+                <view tag="102" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VbW-mt-hjw" customClass="SW_ShaDowBlueBtn" customModule="SWS" customModuleProvider="target">
+                    <rect key="frame" x="105" y="10" width="75" height="35"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="hZy-CS-Br3"/>
+                    </constraints>
+                </view>
+                <view tag="101" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SOT-oh-50K" customClass="SW_ShaDowBlueBtn" customModule="SWS" customModuleProvider="target">
+                    <rect key="frame" x="195" y="10" width="75" height="35"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="8ZF-ce-I57"/>
+                    </constraints>
+                </view>
+                <view tag="103" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FBy-pF-DeH" customClass="SW_ShaDowBlueBtn" customModule="SWS" customModuleProvider="target">
+                    <rect key="frame" x="285" y="10" width="75" height="35"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="9wC-nP-jIu"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="VbW-mt-hjw" firstAttribute="height" secondItem="86D-qu-ekd" secondAttribute="height" id="1t7-HE-KcC"/>
+                <constraint firstItem="SOT-oh-50K" firstAttribute="height" secondItem="86D-qu-ekd" secondAttribute="height" id="2TQ-9i-VUn"/>
+                <constraint firstItem="FBy-pF-DeH" firstAttribute="width" secondItem="86D-qu-ekd" secondAttribute="width" id="2qn-6r-eol"/>
+                <constraint firstItem="86D-qu-ekd" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="9qm-zo-4B6"/>
+                <constraint firstItem="VbW-mt-hjw" firstAttribute="leading" secondItem="86D-qu-ekd" secondAttribute="trailing" constant="15" id="Cfe-Vy-rNA"/>
+                <constraint firstItem="86D-qu-ekd" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="FNZ-WR-zE2"/>
+                <constraint firstItem="VbW-mt-hjw" firstAttribute="width" secondItem="86D-qu-ekd" secondAttribute="width" id="JJy-lF-6tQ"/>
+                <constraint firstItem="SOT-oh-50K" firstAttribute="leading" secondItem="VbW-mt-hjw" secondAttribute="trailing" constant="15" id="KSe-8U-WFl"/>
+                <constraint firstItem="VbW-mt-hjw" firstAttribute="centerY" secondItem="86D-qu-ekd" secondAttribute="centerY" id="Wgm-r4-foE"/>
+                <constraint firstItem="FBy-pF-DeH" firstAttribute="height" secondItem="86D-qu-ekd" secondAttribute="height" id="XKv-c1-Qeb"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="FBy-pF-DeH" secondAttribute="trailing" constant="15" id="YRc-90-K4D"/>
+                <constraint firstItem="FBy-pF-DeH" firstAttribute="centerY" secondItem="86D-qu-ekd" secondAttribute="centerY" id="dq8-JX-JoY"/>
+                <constraint firstItem="SOT-oh-50K" firstAttribute="width" secondItem="86D-qu-ekd" secondAttribute="width" id="k0c-6X-ixH"/>
+                <constraint firstItem="SOT-oh-50K" firstAttribute="centerY" secondItem="86D-qu-ekd" secondAttribute="centerY" id="lG1-RY-FHN"/>
+                <constraint firstItem="FBy-pF-DeH" firstAttribute="leading" secondItem="SOT-oh-50K" secondAttribute="trailing" constant="15" id="zXX-ze-20N"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outletCollection property="typeBtns" destination="86D-qu-ekd" collectionClass="NSMutableArray" id="jBy-9u-opb"/>
+                <outletCollection property="typeBtns" destination="VbW-mt-hjw" collectionClass="NSMutableArray" id="LbG-1s-IwL"/>
+                <outletCollection property="typeBtns" destination="SOT-oh-50K" collectionClass="NSMutableArray" id="ino-87-rMm"/>
+                <outletCollection property="typeBtns" destination="FBy-pF-DeH" collectionClass="NSMutableArray" id="s8E-86-i0e"/>
+            </connections>
+            <point key="canvasLocation" x="138.40000000000001" y="402.54872563718146"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,1 @@
+Ÿ	FPods/AMap3DMap-NO-IDFA/MAMapKit.framework/Headers/MAPolylineRenderer.h 2objcXh

@@ -1,0 +1,1 @@
+�=SWS/Classes/Message(消息)/Models/SW_ConversationModel.swift 2swiftXGh

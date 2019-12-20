@@ -1,0 +1,25 @@
+//
+//  DemoConfManager.h
+//  ChatDemo-UI3.0
+//
+//  Created by XieYajie on 23/11/2016.
+//  Copyright © 2016 XieYajie. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import <Hyphenate/Hyphenate.h>
+#import "DemoCallManager.h"
+#define KNOTIFICATION_CONFERENCE @"conference"
+
+//@class MainViewController;
+@interface DemoConfManager : NSObject
+
+
+@property (weak, nonatomic) UIViewController<DemoCallManagerDelegate> *mainController;
+
++ (instancetype)sharedManager;
+
+- (void)pushConferenceControllerWithType:(EMCallType)aType;
+
+
+@end

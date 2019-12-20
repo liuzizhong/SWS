@@ -1,0 +1,1 @@
+®(Pods/HappyDNS/HappyDNS/Common/QNRecord.m 2objcX"h

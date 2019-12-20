@@ -1,0 +1,1 @@
+–%.SWS/Global(å…¨å±€)/Views/BadgeView/Badge.swift 2swiftXÃh

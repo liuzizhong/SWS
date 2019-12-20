@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="130" id="KGk-i7-Jjw" customClass="SW_RevenueReportListCell" customModule="SWS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="129.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ren-pL-jBU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="122.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="销售部" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AbW-vG-Ndb">
+                                <rect key="frame" x="16" y="14" width="43" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.074509803920000006" green="0.074509803920000006" blue="0.074509803920000006" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="订单编号：2018061100215014" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2uA-In-wNY">
+                                <rect key="frame" x="16" y="41" width="198.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.074509803920000006" green="0.074509803920000006" blue="0.074509803920000006" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="订单署期：2018.6.12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3e6-aX-3Mv">
+                                <rect key="frame" x="16" y="68" width="115.5" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.63137254901960782" green="0.63137254901960782" blue="0.63137254901960782" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="记录日期：2018.6.12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4OD-Y3-M9h">
+                                <rect key="frame" x="16" y="93" width="115.5" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.63137254899999995" green="0.63137254899999995" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2uA-In-wNY" firstAttribute="leading" secondItem="AbW-vG-Ndb" secondAttribute="leading" id="0mB-kf-xCf"/>
+                            <constraint firstItem="AbW-vG-Ndb" firstAttribute="top" secondItem="Ren-pL-jBU" secondAttribute="top" constant="14" id="22P-Ms-3sB"/>
+                            <constraint firstItem="2uA-In-wNY" firstAttribute="top" secondItem="Ren-pL-jBU" secondAttribute="top" constant="41" id="E5c-b6-g5y"/>
+                            <constraint firstItem="3e6-aX-3Mv" firstAttribute="leading" secondItem="2uA-In-wNY" secondAttribute="leading" id="NbG-iY-whl"/>
+                            <constraint firstItem="3e6-aX-3Mv" firstAttribute="top" secondItem="2uA-In-wNY" secondAttribute="bottom" constant="10" id="aub-N1-huy"/>
+                            <constraint firstItem="4OD-Y3-M9h" firstAttribute="top" secondItem="3e6-aX-3Mv" secondAttribute="bottom" constant="10" id="eH1-f2-Yyb"/>
+                            <constraint firstItem="4OD-Y3-M9h" firstAttribute="leading" secondItem="3e6-aX-3Mv" secondAttribute="leading" id="ocH-KR-156"/>
+                            <constraint firstItem="AbW-vG-Ndb" firstAttribute="leading" secondItem="Ren-pL-jBU" secondAttribute="leading" constant="16" id="wxs-mr-I4t"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Ren-pL-jBU" secondAttribute="trailing" id="3zE-VD-A4D"/>
+                    <constraint firstAttribute="bottom" secondItem="Ren-pL-jBU" secondAttribute="bottom" constant="7" id="44x-Qs-8Nn"/>
+                    <constraint firstItem="Ren-pL-jBU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="8x9-2g-mxa"/>
+                    <constraint firstItem="Ren-pL-jBU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="JS0-1e-UAC"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="depLabel" destination="AbW-vG-Ndb" id="F0v-na-DUk"/>
+                <outlet property="periodLabel" destination="3e6-aX-3Mv" id="CXk-O3-ifB"/>
+                <outlet property="recordDateLabel" destination="4OD-Y3-M9h" id="15P-kd-DIo"/>
+                <outlet property="reportNumLabel" destination="2uA-In-wNY" id="2dd-14-Dt5"/>
+                <outlet property="reportNumLabelTopCon" destination="E5c-b6-g5y" id="dYu-Kb-v08"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="103.5"/>
+        </tableViewCell>
+    </objects>
+</document>

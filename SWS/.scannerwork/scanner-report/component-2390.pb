@@ -1,0 +1,1 @@
+Ö;Pods/QMUIKit/QMUIKit/QMUIComponents/QMUIWindowSizeMonitor.h 2objcX<h

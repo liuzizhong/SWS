@@ -1,0 +1,1 @@
+²WPods/AMapFoundation-NO-IDFA/AMapFoundationKit.framework/Headers/AMapFoundationVersion.h 2objcXh

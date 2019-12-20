@@ -1,0 +1,1 @@
+Ž	=Pods/AMap3DMap-NO-IDFA/MAMapKit.framework/Headers/MAPolygon.h 2objcX4h

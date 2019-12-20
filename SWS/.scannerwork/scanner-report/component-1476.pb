@@ -1,0 +1,1 @@
+Ä:Pods/Charts/Source/Charts/Filters/DataApproximator+N.swift 2swiftX™h

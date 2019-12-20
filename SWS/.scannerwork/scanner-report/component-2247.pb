@@ -1,0 +1,1 @@
+Ç/Pods/OpenCV/opencv2.framework/Headers/imgcodecs :ÆÉ

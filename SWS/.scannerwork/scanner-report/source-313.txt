@@ -1,0 +1,21 @@
+
+#import <Foundation/Foundation.h>
+
+
+@interface NSObject (NSObject_JsonWriting)
+
+- (NSString *)JSONRepresentation;
+
+@end
+
+@interface NSString (NSString_JsonParsing)
+
+- (id)JSONValue;
+
+@end
+
+@interface NSData (NSData_JsonParsing)
+
+- (id)JSONValue;
+
+@end

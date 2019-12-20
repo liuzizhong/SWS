@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SW_LikeCarLegendCell" customModule="SWS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="191" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="191" height="50"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ykt-eu-dZM">
+                        <rect key="frame" x="0.0" y="20.5" width="9" height="9"/>
+                        <color key="backgroundColor" red="0.27058823529999998" green="0.59999999999999998" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="9" id="Ad5-HQ-YJi"/>
+                            <constraint firstAttribute="height" constant="9" id="u0v-WD-Ccm"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="图例" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNc-rf-84A">
+                        <rect key="frame" x="17" y="16.5" width="29" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.074509803920000006" green="0.074509803920000006" blue="0.074509803920000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1人" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6I-vt-QYq">
+                        <rect key="frame" x="170" y="15" width="21" height="20"/>
+                        <color key="backgroundColor" red="0.94117647058823528" green="0.96862745098039216" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="Sp9-Q2-tNg"/>
+                            <constraint firstAttribute="width" constant="21" id="qts-rr-eea"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.27058823529999998" green="0.59999999999999998" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="uNc-rf-84A" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="8lJ-Kj-F0p"/>
+                <constraint firstItem="ykt-eu-dZM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="D3f-LO-jZi"/>
+                <constraint firstItem="uNc-rf-84A" firstAttribute="leading" secondItem="ykt-eu-dZM" secondAttribute="trailing" constant="8" id="ESx-Xp-zDq"/>
+                <constraint firstAttribute="trailing" secondItem="f6I-vt-QYq" secondAttribute="trailing" id="Pn6-ZO-P9q"/>
+                <constraint firstItem="f6I-vt-QYq" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="kQw-br-8Ny"/>
+                <constraint firstItem="ykt-eu-dZM" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="lGo-wp-2Fd"/>
+                <constraint firstItem="f6I-vt-QYq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="uNc-rf-84A" secondAttribute="trailing" constant="10" id="yoQ-gJ-BUe"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="191" height="50"/>
+            <connections>
+                <outlet property="legendColor" destination="ykt-eu-dZM" id="6FN-g3-air"/>
+                <outlet property="legendName" destination="uNc-rf-84A" id="74G-zr-dTw"/>
+                <outlet property="peopleCountLb" destination="f6I-vt-QYq" id="m01-c3-FDy"/>
+                <outlet property="peopleLbWidthConstraint" destination="qts-rr-eea" id="hBN-Y2-4aU"/>
+            </connections>
+            <point key="canvasLocation" x="104.5" y="54"/>
+        </collectionViewCell>
+    </objects>
+</document>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SW_LookLocationViewController" customModule="SWS" customModuleProvider="target">
+            <connections>
+                <outlet property="locationBtn" destination="Fh3-8Z-3Kj" id="Aco-FL-9tI"/>
+                <outlet property="mapView" destination="5qs-Tr-oda" id="pyy-Fg-j3I"/>
+                <outlet property="positionAddressNameLb" destination="DNY-lJ-GbA" id="eNP-qR-gjR"/>
+                <outlet property="positionNameLb" destination="WER-5h-9AD" id="4kF-ed-Ue1"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5qs-Tr-oda" customClass="MAMapView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="577"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CEM-ga-OAH">
+                    <rect key="frame" x="0.0" y="20" width="60" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="6vy-5P-hWL"/>
+                        <constraint firstAttribute="width" constant="60" id="P7O-03-qLo"/>
+                    </constraints>
+                    <state key="normal" image="back_map_icon"/>
+                    <connections>
+                        <action selector="backActionClick:" destination="-1" eventType="touchUpInside" id="eOb-Ay-tkD"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fh3-8Z-3Kj">
+                    <rect key="frame" x="310" y="502" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="BAw-zC-93t"/>
+                        <constraint firstAttribute="width" constant="50" id="U3b-Ow-653"/>
+                    </constraints>
+                    <state key="normal" image="gps_normal"/>
+                    <state key="selected" image="gps_selected"/>
+                    <state key="highlighted" image="gps_highlted"/>
+                    <connections>
+                        <action selector="locationBtnClick:" destination="-1" eventType="touchUpInside" id="871-0b-zbD"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P2C-Jh-Pqd">
+                    <rect key="frame" x="0.0" y="577" width="375" height="90"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WER-5h-9AD">
+                            <rect key="frame" x="15" y="18" width="51.5" height="25.5"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
+                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNY-lJ-GbA">
+                            <rect key="frame" x="15" y="48.5" width="33" height="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6Z-oY-hRQ">
+                            <rect key="frame" x="310" y="20" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="i0k-lM-aoh"/>
+                                <constraint firstAttribute="height" constant="50" id="tdr-pO-fNr"/>
+                            </constraints>
+                            <state key="normal" image="navigation_map_icon"/>
+                            <connections>
+                                <action selector="navigationBtnClick:" destination="-1" eventType="touchUpInside" id="7WO-ga-3yj"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="f6Z-oY-hRQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="WER-5h-9AD" secondAttribute="trailing" constant="10" id="2gl-8J-2iv"/>
+                        <constraint firstAttribute="trailing" secondItem="f6Z-oY-hRQ" secondAttribute="trailing" constant="15" id="H8E-ci-Hd6"/>
+                        <constraint firstItem="WER-5h-9AD" firstAttribute="leading" secondItem="P2C-Jh-Pqd" secondAttribute="leading" constant="15" id="Q6T-sK-gBB"/>
+                        <constraint firstItem="DNY-lJ-GbA" firstAttribute="leading" secondItem="P2C-Jh-Pqd" secondAttribute="leading" constant="15" id="UR7-m8-Lvj"/>
+                        <constraint firstAttribute="height" constant="90" id="WQN-Tw-ulr"/>
+                        <constraint firstItem="WER-5h-9AD" firstAttribute="top" secondItem="P2C-Jh-Pqd" secondAttribute="top" constant="18" id="e2X-1d-bAz"/>
+                        <constraint firstItem="f6Z-oY-hRQ" firstAttribute="centerY" secondItem="P2C-Jh-Pqd" secondAttribute="centerY" id="oKu-vK-fSW"/>
+                        <constraint firstItem="f6Z-oY-hRQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DNY-lJ-GbA" secondAttribute="trailing" constant="10" id="qwi-TD-w0x"/>
+                        <constraint firstItem="DNY-lJ-GbA" firstAttribute="top" secondItem="WER-5h-9AD" secondAttribute="bottom" constant="5" id="s4L-XB-C66"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="CEM-ga-OAH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="5p7-U0-PpH"/>
+                <constraint firstItem="CEM-ga-OAH" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="FbW-3t-TbJ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Fh3-8Z-3Kj" secondAttribute="trailing" constant="15" id="OZy-bL-e1M"/>
+                <constraint firstItem="P2C-Jh-Pqd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="VkG-Nm-5y9"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5qs-Tr-oda" secondAttribute="trailing" id="avG-Cq-sgd"/>
+                <constraint firstItem="5qs-Tr-oda" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fRh-UR-xJa"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="P2C-Jh-Pqd" secondAttribute="bottom" id="iQB-Ca-O3f"/>
+                <constraint firstItem="5qs-Tr-oda" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="mLo-tS-jLL"/>
+                <constraint firstItem="P2C-Jh-Pqd" firstAttribute="top" secondItem="5qs-Tr-oda" secondAttribute="bottom" id="mdT-Dz-eaJ"/>
+                <constraint firstItem="Fh3-8Z-3Kj" firstAttribute="bottom" secondItem="5qs-Tr-oda" secondAttribute="bottom" constant="-25" id="of0-o0-Vi5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="P2C-Jh-Pqd" secondAttribute="trailing" id="ybT-AC-xsJ"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="back_map_icon" width="30" height="30"/>
+        <image name="gps_highlted" width="50" height="50"/>
+        <image name="gps_normal" width="50" height="50"/>
+        <image name="gps_selected" width="50" height="50"/>
+        <image name="navigation_map_icon" width="50" height="50"/>
+    </resources>
+</document>

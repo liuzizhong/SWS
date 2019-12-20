@@ -1,0 +1,175 @@
+Environment variables:
+  - Apple_PubSub_Socket_Render=/private/tmp/com.apple.launchd.zlC6RPTsPo/Render
+  - COLORFGBG=15;0
+  - COLORTERM=truecolor
+  - COMMAND_MODE=unix2003
+  - CPPFLAGS=-I/usr/local/opt/icu4c/include
+  - GEM_HOME=/Users/jayway/.rvm/gems/ruby-2.4.6
+  - GEM_PATH=/Users/jayway/.rvm/gems/ruby-2.4.6:/Users/jayway/.rvm/gems/ruby-2.4.6@global
+  - GOBIN=/Users/jayway/go/bin
+  - GOPATH=/Users/jayway/go
+  - GOROOT=/usr/local/go
+  - GROOVY_HOME=/usr/local/opt/groovy/libexec
+  - HOME=/Users/jayway
+  - IRBRC=/Users/jayway/.rvm/rubies/ruby-2.4.6/.irbrc
+  - ITERM_PROFILE=Default
+  - ITERM_SESSION_ID=w0t9p0:A9B01B6B-D386-439A-820B-8CFF4F95B587
+  - JAVA_HOME=/Users/jayway/sonarscanner/jre
+  - JAVA_MAIN_CLASS_8290=org.sonarsource.scanner.cli.Main
+  - LANG=zh_CN.UTF-8
+  - LC_CTYPE=zh_CN.UTF-8
+  - LDFLAGS=-L/usr/local/opt/icu4c/lib
+  - LESS=-R
+  - LOGNAME=jayway
+  - LSCOLORS=Gxfxcxdxbxegedabagacad
+  - MY_RUBY_HOME=/Users/jayway/.rvm/rubies/ruby-2.4.6
+  - PAGER=less
+  - PATH=/Users/jayway/.rvm/gems/ruby-2.4.6/bin:/Users/jayway/.rvm/gems/ruby-2.4.6@global/bin:/Users/jayway/.rvm/rubies/ruby-2.4.6/bin:/Users/jayway/.fastlane/bin:/usr/local/opt/icu4c/sbin:/usr/local/opt/icu4c/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/Users/jayway/go/src/github.com/hyperledger/fabric-samples/bin:/Users/jayway/.fastlane/bin:/usr/local/go/bin:/bin:/usr/local/opt/gnu-tar/libexec/gnubin:/Users/jayway/.rbenv/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/jayway/sonarqube/bin:/Users/jayway/sonarscanner/bin:/Users/jayway/.rvm/bin
+  - PWD=/Users/jayway/Documents/yr-sw-oa-master/SWS
+  - RUBY_VERSION=ruby-2.4.6
+  - SECURITYSESSIONID=186a9
+  - SHELL=/bin/zsh
+  - SHLVL=1
+  - SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.g3XnoDyaCD/Listeners
+  - TERM=xterm-256color
+  - TERM_PROGRAM=iTerm.app
+  - TERM_PROGRAM_VERSION=3.2.9
+  - TERM_SESSION_ID=w0t9p0:A9B01B6B-D386-439A-820B-8CFF4F95B587
+  - TMPDIR=/var/folders/b9/xn0m_knn3pg9jn1yf_1wh0ch0000gn/T/
+  - TRANSPORTER_HOME=/Applications/Xcode.app/Contents/Developer/../Applications/Application Loader.app/Contents/MacOS/itms/bin
+  - USER=jayway
+  - XPC_FLAGS=0x0
+  - XPC_SERVICE_NAME=0
+  - ZSH=/Users/jayway/.oh-my-zsh
+  - __CF_USER_TEXT_ENCODING=0x1F5:0x19:0x34
+  - rvm_alias_expanded=
+  - rvm_bin_flag=
+  - rvm_bin_path=/Users/jayway/.rvm/bin
+  - rvm_docs_type=
+  - rvm_gemstone_package_file=
+  - rvm_gemstone_url=
+  - rvm_hook=
+  - rvm_niceness=
+  - rvm_nightly_flag=
+  - rvm_only_path_flag=
+  - rvm_path=/Users/jayway/.rvm
+  - rvm_prefix=/Users/jayway
+  - rvm_pretty_print_flag=
+  - rvm_proxy=
+  - rvm_quiet_flag=
+  - rvm_ruby_bits=
+  - rvm_ruby_file=
+  - rvm_ruby_make=
+  - rvm_ruby_make_install=
+  - rvm_ruby_mode=
+  - rvm_script_name=
+  - rvm_sdk=
+  - rvm_silent_flag=
+  - rvm_use_flag=
+  - rvm_version=1.29.9 (latest)
+System properties:
+  - awt.toolkit=sun.lwawt.macosx.LWCToolkit
+  - file.encoding=UTF-8
+  - file.separator=/
+  - ftp.nonProxyHosts=127.0.0.1|localhost|*.localhost
+  - gopherProxySet=false
+  - http.nonProxyHosts=127.0.0.1|localhost|*.localhost
+  - http.proxyHost=127.0.0.1
+  - http.proxyPort=1087
+  - https.proxyHost=127.0.0.1
+  - https.proxyPort=1087
+  - java.awt.graphicsenv=sun.awt.CGraphicsEnvironment
+  - java.awt.headless=true
+  - java.awt.printerjob=sun.lwawt.macosx.CPrinterJob
+  - java.class.path=/Users/jayway/sonarscanner/lib/sonar-scanner-cli-4.1.0.1829.jar
+  - java.class.version=55.0
+  - java.home=/Users/jayway/sonarscanner/jre
+  - java.io.tmpdir=/var/folders/b9/xn0m_knn3pg9jn1yf_1wh0ch0000gn/T/
+  - java.library.path=/Users/jayway/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+  - java.runtime.name=OpenJDK Runtime Environment
+  - java.runtime.version=11.0.3+7
+  - java.specification.name=Java Platform API Specification
+  - java.specification.vendor=Oracle Corporation
+  - java.specification.version=11
+  - java.vendor=AdoptOpenJDK
+  - java.vendor.url=https://adoptopenjdk.net/
+  - java.vendor.url.bug=https://github.com/AdoptOpenJDK/openjdk-build/issues
+  - java.vendor.version=AdoptOpenJDK
+  - java.version=11.0.3
+  - java.version.date=2019-04-16
+  - java.vm.compressedOopsMode=Zero based
+  - java.vm.info=mixed mode
+  - java.vm.name=OpenJDK 64-Bit Server VM
+  - java.vm.specification.name=Java Virtual Machine Specification
+  - java.vm.specification.vendor=Oracle Corporation
+  - java.vm.specification.version=11
+  - java.vm.vendor=AdoptOpenJDK
+  - java.vm.version=11.0.3+7
+  - jdk.debug=release
+  - line.separator=
+
+  - os.arch=x86_64
+  - os.name=Mac OS X
+  - os.version=10.14.6
+  - path.separator=:
+  - project.home=/Users/jayway/Documents/yr-sw-oa-master/SWS
+  - scanner.home=/Users/jayway/sonarscanner
+  - socksNonProxyHosts=127.0.0.1|localhost|*.localhost
+  - socksProxyHost=127.0.0.1
+  - socksProxyPort=1086
+  - sun.arch.data.model=64
+  - sun.boot.library.path=/Users/jayway/sonarscanner/jre/lib
+  - sun.cpu.endian=little
+  - sun.cpu.isalist=
+  - sun.io.unicode.encoding=UnicodeBig
+  - sun.java.command=org.sonarsource.scanner.cli.Main -X
+  - sun.java.launcher=SUN_STANDARD
+  - sun.jnu.encoding=UTF-8
+  - sun.management.compiler=HotSpot 64-Bit Tiered Compilers
+  - sun.os.patch.level=unknown
+  - user.country=CN
+  - user.dir=/Users/jayway/Documents/yr-sw-oa-master/SWS
+  - user.home=/Users/jayway
+  - user.language=zh
+  - user.name=jayway
+  - user.script=Hans
+  - user.timezone=Asia/Shanghai
+SonarQube plugins:
+  - SonarPython 1.8.0.1496 (python)
+  - Chinese Pack 1.19 (l10nzh)
+  - Apigee 2.0.0 (apigee)
+  - Swift (Backelite) 0.4.5 (backelitesonarswiftplugin)
+  - SonarQube :: Plugins :: SCM :: SVN 1.6.0.860 (scmsvn)
+  - SonarJS 3.2.0.5506 (javascript)
+  - SonarC# 6.5.0.3766 (csharp)
+  - SonarJava 4.15.0.12310 (java)
+  - Flex 2.3 (flex)
+  - SonarQube :: Plugins :: SCM :: Git 1.3.0.869 (scmgit)
+  - SonarXML 2.0.1.2020 (xml)
+  - SonarPHP 2.11.0.2485 (php)
+  - SonarTS 1.1.0.1079 (typescript)
+Global properties:
+  - sonar.core.id=49B321BC-AW8cFnjIEIX99AQv90nJ
+  - sonar.core.startTime=2019-12-19T11:44:49+0800
+  - sonar.scm.disabled=true
+  - sonar.svn.password.secured=******
+  - sonar.svn.username=lzz
+Settings for module: yr-sw-oa-ios
+  - sonar.host.url=http://localhost:9000
+  - sonar.login=******
+  - sonar.projectBaseDir=/Users/jayway/Documents/yr-sw-oa-master/SWS
+  - sonar.projectDescription=rosetta analyzed with the SonarQube Runner
+  - sonar.projectKey=yr-sw-oa-ios
+  - sonar.projectName=yr-sw-oa-ios
+  - sonar.projectVersion=2.5.6
+  - sonar.scanner.app=ScannerCli
+  - sonar.scanner.appVersion=4.1.0.1829
+  - sonar.sourceEncoding=UTF-8
+  - sonar.sources=.
+  - sonar.swift.appScheme=SWS
+  - sonar.swift.project=SWS.xcodeproj
+  - sonar.swift.swiftlint.report=sws-swiftlint.txt
+  - sonar.swift.testScheme=SWS
+  - sonar.swift.workspace=SWS.xcworkspace
+  - sonar.verbose=true
+  - sonar.working.directory=/Users/jayway/Documents/yr-sw-oa-master/SWS/.scannerwork

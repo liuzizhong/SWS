@@ -1,0 +1,1 @@
+¯QPods/AMapLocation-NO-IDFA/AMapLocationKit.framework/Headers/AMapGeoFenceManager.h 2objcXÔh

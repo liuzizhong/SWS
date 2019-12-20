@@ -1,0 +1,1 @@
+ŽSWSTests/SWSTests.swift 2swiftX%h

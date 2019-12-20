@@ -1,0 +1,68 @@
+//
+//  AlertTextFieldRow.swift
+//  MyInfomation
+//
+//  Created by 115 on 2017/2/28.
+//  Copyright © 2017年 zhangke. All rights reserved.
+//
+
+import Foundation
+//import Eureka
+
+open class _TextFieldAlertRow<Cell: CellType>: OptionsRow<Cell>, PresenterRowType where Cell: BaseCell {
+
+    open var onPresentCallback : ((FormViewController, SelectorTextFieldAlertController<Cell.Value>)->())?
+    
+    lazy open var presentationMode: PresentationMode<SelectorTextFieldAlertController<Cell.Value>>? = {
+        return .presentModally(controllerProvider: ControllerProvider.callback { [weak self] in
+            let vc = SelectorTextFieldAlertController<Cell.Value>(title: self?.selectorTitle, message: nil, preferredStyle: .alert)
+            vc.row = self
+            vc.addTextField { (textfield) in
+                textfield.text = vc.row.value as? String
+                textfield.addTarget(self, action: #selector(_TextFieldAlertRow.textFieldDidChange(textfield:)), for: .editingChanged)
+                textfield.clearButtonMode = .whileEditing
+            }
+            vc.textFields?.first?.becomeFirstResponder()
+            return vc
+            }, onDismiss: { [weak self] in
+                $0.dismiss(animated: true)
+                self?.cell?.formViewController()?.tableView?.reloadData()
+            }
+        )
+    }()
+    
+    public required init(tag: String?) {
+        super.init(tag: tag)
+    }
+    
+    open override func customDidSelect() {
+        super.customDidSelect()
+        if let presentationMode = presentationMode, !isDisabled  {
+            if let controller = presentationMode.makeController(){
+                controller.row = self
+                onPresentCallback?(cell.formViewController()!, controller)
+                presentationMode.present(controller, row: self, presentingController: cell.formViewController()!)
+            }
+            else{
+                presentationMode.present(nil, row: self, presentingController: cell.formViewController()!)
+            }
+        }
+    }
+    
+    let textLenghtLimit = 50
+    
+    @objc private func textFieldDidChange(textfield: UITextField) {
+        if let text = textfield.text, text.count > textLenghtLimit {
+            let index = text.index(text.startIndex, offsetBy: textLenghtLimit)
+            textfield.text = text.substring(to: index)
+        }
+    }
+
+}
+
+/// An options row where the user can select an option from a modal Alert
+public final class TextFieldAlertRow<T: Equatable>: _TextFieldAlertRow<AlertSelectorCell<T>>, RowType {
+    required public init(tag: String?) {
+        super.init(tag: tag)
+    }
+}

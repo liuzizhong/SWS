@@ -1,0 +1,49 @@
+//
+//  SelectorTextFieldAlertController.swift
+//  MyInfomation
+//
+//  Created by 115 on 2017/2/28.
+//  Copyright © 2017年 zhangke. All rights reserved.
+//
+
+import UIKit
+import Eureka
+open class SelectorTextFieldAlertController<T: Equatable>: UIAlertController,TypedRowControllerType {
+
+    /// The row that pushed or presented this controller
+    public var row: RowOf<T>!
+    
+    public var cancelTitle = NSLocalizedString("取消", comment: "")
+    public var doneTitle = NSLocalizedString("确认", comment: "")
+    
+    /// A closure to be called when the controller disappears.
+    public var onDismissCallback : ((UIViewController) -> ())?
+    
+    override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    convenience public init(_ callback: ((UIViewController) -> ())?){
+        self.init()
+        onDismissCallback = callback
+    }
+    
+    open override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        addAction(UIAlertAction(title: cancelTitle, style: .cancel, handler: nil))
+        addAction(UIAlertAction(title: doneTitle, style: .default, handler: { [weak self] _ in
+            guard let newValue = self?.textFields?[0].text else {
+                self?.onDismissCallback?(self!)
+                return
+            }
+            self?.row.value = newValue as? T
+            self?.onDismissCallback?(self!)
+        }))
+    }
+
+}

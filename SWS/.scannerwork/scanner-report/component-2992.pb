@@ -1,0 +1,1 @@
+°SPods/AMapLocation-NO-IDFA/AMapLocationKit.framework/Headers/AMapLocationRegionObj.h 2objcX[h

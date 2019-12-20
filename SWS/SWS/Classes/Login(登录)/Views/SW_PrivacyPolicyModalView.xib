@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SW_PrivacyPolicyModalView" customModule="SWS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="133"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您需同意《效率+隐私政策》方可使用本软件" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEC-30-twg">
+                    <rect key="frame" x="13" y="26" width="349" height="43"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" red="0.0" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9EQ-Zb-E6K">
+                    <rect key="frame" x="0.0" y="90" width="375" height="43"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="43" id="UcO-th-2IT"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="tintColor" red="0.074509803920000006" green="0.46666666670000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="我知道了">
+                        <color key="titleColor" red="0.074509803920000006" green="0.46666666670000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="knowBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="BbO-Fb-O41"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jLs-Ft-fiM">
+                    <rect key="frame" x="0.0" y="89.5" width="375" height="0.5"/>
+                    <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="3bW-d0-uGD"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="9EQ-Zb-E6K" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="2aW-T8-J9q"/>
+                <constraint firstItem="yEC-30-twg" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="26" id="39Z-CY-2R7"/>
+                <constraint firstItem="9EQ-Zb-E6K" firstAttribute="top" secondItem="jLs-Ft-fiM" secondAttribute="bottom" id="4sH-fg-ECY"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="9EQ-Zb-E6K" secondAttribute="bottom" id="IWi-30-TOr"/>
+                <constraint firstItem="yEC-30-twg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="13" id="J5Q-mz-su0"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="yEC-30-twg" secondAttribute="trailing" constant="13" id="MuD-7e-YPD"/>
+                <constraint firstItem="jLs-Ft-fiM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="NOj-ia-6Ou"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="jLs-Ft-fiM" secondAttribute="trailing" id="gZU-Zu-60N"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="9EQ-Zb-E6K" secondAttribute="trailing" id="ibU-wt-rvd"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="138.40000000000001" y="394.45277361319341"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,1 @@
+®`Pods/AMapFoundation-NO-IDFA/AMapFoundationKit.framework/Headers/NSObject+AMapJsonSerialization.h 2objcX1h

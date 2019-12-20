@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SW_TwoButtonView" customModule="SWS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZiB-Ae-rnt" customClass="SW_BlueButton" customModule="SWS" customModuleProvider="target">
+                    <rect key="frame" x="15" y="28" width="165" height="44"/>
+                    <color key="backgroundColor" red="0.074509803920000006" green="0.46666666670000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="oeF-QC-AzM"/>
+                    </constraints>
+                    <state key="normal">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="leftBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="aBj-Of-HZU"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S6S-yU-e1a" customClass="SW_BlueButton" customModule="SWS" customModuleProvider="target">
+                    <rect key="frame" x="195" y="28" width="165" height="44"/>
+                    <color key="backgroundColor" red="0.074509803920000006" green="0.46666666670000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="rightBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="quX-sj-CKV"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ZiB-Ae-rnt" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="Hze-DL-MRO"/>
+                <constraint firstItem="ZiB-Ae-rnt" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="bi5-oz-1Pd"/>
+                <constraint firstItem="S6S-yU-e1a" firstAttribute="leading" secondItem="ZiB-Ae-rnt" secondAttribute="trailing" constant="15" id="f4Y-55-RqQ"/>
+                <constraint firstItem="ZiB-Ae-rnt" firstAttribute="width" secondItem="S6S-yU-e1a" secondAttribute="width" id="jUu-sM-kZd"/>
+                <constraint firstItem="S6S-yU-e1a" firstAttribute="centerY" secondItem="ZiB-Ae-rnt" secondAttribute="centerY" id="jvd-bJ-vK3"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="S6S-yU-e1a" secondAttribute="trailing" constant="15" id="xdB-rG-xuz"/>
+                <constraint firstItem="ZiB-Ae-rnt" firstAttribute="height" secondItem="S6S-yU-e1a" secondAttribute="height" id="zDb-s7-ztk"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="leftBtn" destination="ZiB-Ae-rnt" id="ZWN-sh-5eK"/>
+                <outlet property="rightBtn" destination="S6S-yU-e1a" id="QpN-xa-Pyk"/>
+            </connections>
+            <point key="canvasLocation" x="138.40000000000001" y="270.76461769115446"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,1 @@
+‡WSupports/PagingMenuController-master/Example/PagingMenuControllerDemo/AppDelegate.swift 2swiftX.h

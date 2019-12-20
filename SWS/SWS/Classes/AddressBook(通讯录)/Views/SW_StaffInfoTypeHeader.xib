@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="KGk-i7-Jjw" customClass="SW_StaffInfoTypeHeader" customModule="SWS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="saY-Sa-t7W" customClass="QMUIButton">
+                        <rect key="frame" x="111" y="5" width="66" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="DIy-fV-OpP"/>
+                            <constraint firstAttribute="width" constant="66" id="eYu-E8-JTz"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <state key="normal" title="个人资料">
+                            <color key="titleColor" red="0.1647058824" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <state key="selected">
+                            <color key="titleColor" red="0.074509803921568626" green="0.46666666666666667" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="persionBtnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="VEi-av-scQ"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sjz-3u-nci" customClass="QMUIButton">
+                        <rect key="frame" x="15" y="5" width="66" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="66" id="fcI-Gl-sH7"/>
+                            <constraint firstAttribute="height" priority="900" constant="40" id="yD4-gd-wDG"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <state key="normal" title="工作资料">
+                            <color key="titleColor" red="0.1647058824" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <state key="selected">
+                            <color key="titleColor" red="0.074509803921568626" green="0.46666666666666667" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="workBtnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="7DD-Ng-eoU"/>
+                        </connections>
+                    </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a82-QA-ccd">
+                        <rect key="frame" x="0.0" y="49" width="320" height="0.5"/>
+                        <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="uZx-tj-OAs"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="sjz-3u-nci" secondAttribute="bottom" priority="900" constant="4.5" id="BxC-mB-k9x"/>
+                    <constraint firstAttribute="bottom" secondItem="a82-QA-ccd" secondAttribute="bottom" id="Pea-fV-l1b"/>
+                    <constraint firstAttribute="trailing" secondItem="a82-QA-ccd" secondAttribute="trailing" id="Uyw-Yb-ecW"/>
+                    <constraint firstItem="sjz-3u-nci" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="W7D-do-vUu"/>
+                    <constraint firstItem="sjz-3u-nci" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Yrf-jU-QnL"/>
+                    <constraint firstItem="sjz-3u-nci" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" priority="900" constant="4.5" id="bMI-kd-IqI"/>
+                    <constraint firstItem="saY-Sa-t7W" firstAttribute="centerY" secondItem="sjz-3u-nci" secondAttribute="centerY" id="qzh-kb-3Dc"/>
+                    <constraint firstItem="a82-QA-ccd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="vmK-gz-LTT"/>
+                    <constraint firstItem="saY-Sa-t7W" firstAttribute="leading" secondItem="sjz-3u-nci" secondAttribute="trailing" constant="30" id="xDH-fh-tNA"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="persionBtn" destination="saY-Sa-t7W" id="4gg-6A-nOJ"/>
+                <outlet property="workBtn" destination="sjz-3u-nci" id="zyi-eg-Hpz"/>
+            </connections>
+            <point key="canvasLocation" x="139.19999999999999" y="168.21589205397302"/>
+        </tableViewCell>
+    </objects>
+</document>

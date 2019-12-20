@@ -1,0 +1,1 @@
+´HPods/OpenCV/opencv2.framework/Versions/A/Headers/imgcodecs/imgcodecs_c.h 2objcX–h

@@ -1,0 +1,1 @@
+‚NPods/AMapSearch-NO-IDFA/AMapSearchKit.framework/Headers/AMapNearbyUploadInfo.h 2objcX!h

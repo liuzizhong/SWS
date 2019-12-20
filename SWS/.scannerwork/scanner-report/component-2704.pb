@@ -1,0 +1,1 @@
+ê+Pods/HappyDNS/HappyDNS/Util/QNGetAddrInfo.h 2objcX)h

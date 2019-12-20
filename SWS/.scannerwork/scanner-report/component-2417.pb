@@ -1,0 +1,1 @@
+ñaPods/QMUIKit/QMUIKit/QMUIComponents/QMUIImagePreviewView/QMUIImagePreviewViewTransitionAnimator.h 2objcXLh

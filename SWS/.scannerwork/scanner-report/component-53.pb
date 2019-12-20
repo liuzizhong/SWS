@@ -1,0 +1,1 @@
+5*Supports/Alamofire/ServerTrustPolicy.swift 2swiftX´h

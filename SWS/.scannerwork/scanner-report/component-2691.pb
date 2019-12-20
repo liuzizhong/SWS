@@ -1,0 +1,1 @@
+ƒQPods/SpreadsheetView/Framework/Sources/SpreadsheetView+UIScrollViewDelegate.swift 2swiftX;h

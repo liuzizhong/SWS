@@ -1,0 +1,1 @@
+n.Supports/Eureka/Source/Core/SwipeActions.swift 2swiftXth

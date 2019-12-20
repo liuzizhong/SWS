@@ -1,0 +1,418 @@
+//
+//  MLNavigationController.m
+//  MultiLayerNavigation
+//
+//  Created by Feather Chan on 13-4-12.
+//  Copyright (c) 2013年 115. All rights reserved.
+//
+
+#import "MLNavigationController.h"
+#import <QuartzCore/QuartzCore.h>
+#import "objc/runtime.h"
+#import "EaseRecordButton.h"
+
+@interface MLNavigationController () <UINavigationControllerDelegate>
+{
+    CGPoint startTouch;
+    
+    UIImageView *lastScreenShotView;
+    UIView *blackMask;
+}
+
+@property(nonatomic, strong) UIView *backgroundView;
+@property(nonatomic, strong) NSMutableDictionary<NSString *, UIView *> *screenShots;
+
+@property(nonatomic) BOOL isMoving;
+@property(nonatomic) BOOL shouldBeRequiredToFail;
+
+@property(nonatomic) CGRect originalFrame;
+@property(nonatomic, strong) UITapGestureRecognizer *outsideTapGesture; // iPad present .FormSheet 点击空白处 dismiss
+
+@end
+
+#pragma mark -
+@implementation MLNavigationController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        self.delegate = self;
+        self.screenShots = [NSMutableDictionary dictionary];
+        self.canDragBack = YES;
+    }
+    return self;
+}
+
+-(instancetype)initWithRootViewController:(UIViewController *)rootViewController
+{
+    self = [super initWithRootViewController:rootViewController];
+    if (self) {
+        self.delegate = self;
+        self.screenShots = [NSMutableDictionary dictionary];
+        self.canDragBack = YES;
+    }
+    return self;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(themeColorDidChanged:) name:@"ApplicationThemeColorDidChanged" object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hiddenSearchView) name:@"kHideAllSearchView" object:nil];
+
+    UIImageView *shadowImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"leftside_shadow_bg"]];
+    shadowImageView.frame = CGRectMake(-10, 0, 10, self.view.frame.size.height);
+    [self.view addSubview:shadowImageView];
+    
+    UIPanGestureRecognizer *recognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(paningGestureReceive:)];
+    recognizer.delegate = self;
+//    [recognizer delaysTouchesBegan];
+    recognizer.delaysTouchesBegan = NO;
+    [self.view addGestureRecognizer:recognizer];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:(BOOL)animated];
+    if (!self.outsideTapGesture && self.isPadFormSheet) {
+        self.outsideTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(outsideTapGestureAction:)];
+        self.outsideTapGesture.cancelsTouchesInView = NO;
+        self.outsideTapGesture.delegate = self;
+        [self.view.window addGestureRecognizer:self.outsideTapGesture];
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.outsideTapGesture.view removeGestureRecognizer:self.outsideTapGesture];
+    self.outsideTapGesture = nil;
+}
+
+//- (void)hiddenSearchView {
+//    for (UIViewController *vc in self.viewControllers) {
+//        [[self searchViewFromController:vc] setActive:NO];
+//    }
+//}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc {
+    [self.outsideTapGesture.view removeGestureRecognizer:self.outsideTapGesture];
+    self.outsideTapGesture = nil;
+    self.screenShots = nil;
+    [self.backgroundView removeFromSuperview];
+    self.backgroundView = nil;
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+#pragma mark - Override
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    [self snapshotCurrentView];
+    [super pushViewController:viewController animated:animated];
+}
+
+- (UIViewController *)popViewControllerAnimated:(BOOL)animated {
+    [self.screenShots removeObjectForKey:[self cacheKeyForViewController:self.topViewControllerPrevious]];
+    if ([self.topViewController respondsToSelector:@selector(popMLViewController)]) {
+        [(id<MLNavigationControllerDelegate>)self.topViewController popMLViewController];
+    }
+    return [super popViewControllerAnimated:animated];
+}
+
+#pragma mark - iPad Present
+- (BOOL)isPadFormSheet {
+    BOOL shouldDismiss = YES;
+    if ([self.topViewController respondsToSelector:@selector(navigationControllerShouldDismissFormSheet:)]) {
+        shouldDismiss = [(id<MLNavigationControllerDelegate>)self.topViewController navigationControllerShouldDismissFormSheet:self];
+    }
+    return shouldDismiss && UIUserInterfaceIdiomIsPad() && (self.modalPresentationStyle == UIModalPresentationFormSheet || self.viewControllers.firstObject.modalPresentationStyle == UIModalPresentationFormSheet);
+}
+
+- (void)outsideTapGestureAction:(UITapGestureRecognizer *)gesture {
+    if (gesture.state == UIGestureRecognizerStateEnded) {
+        if (self.presentedViewController == nil &&
+            ![self.view hitTest:[gesture locationInView:self.view] withEvent:nil]) {
+            [self.outsideTapGesture.view removeGestureRecognizer:self.outsideTapGesture];
+            self.outsideTapGesture = nil;
+            if ([self.topViewController respondsToSelector:@selector(navigationControllerWillDismissFormSheet:)]) {
+                [(id<MLNavigationControllerDelegate>)self.topViewController navigationControllerWillDismissFormSheet:self];
+            }
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
+    }
+}
+
+#pragma mark - UIGestureRecognizerDelegate
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    if (gestureRecognizer == self.outsideTapGesture) {
+        return YES;
+    }
+    if ([touch.view isKindOfClass:[EaseRecordButton class]]) { // 消息语音的手势操作和滑动返回有冲突，滑动到发送时会导致消息的手势 canceled
+        self.shouldBeRequiredToFail = YES;
+        return NO;
+    }
+    self.shouldBeRequiredToFail = NO;
+    BOOL shouldBack = YES;
+    if ([self.topViewController respondsToSelector:@selector(navigationControllerShouldDragback:)]) {
+        shouldBack = [(id<MLNavigationControllerDelegate>)self.topViewController navigationControllerShouldDragback:self];
+    }
+//    if ([self searchViewFromController:self.topViewController].isActive && ![self searchViewFromController:self.topViewController].isSearchViewController) {
+//        shouldBack = NO;
+//    }
+    if (self.viewControllers.count <= 1 || !self.canDragBack || !shouldBack) {
+        return NO;
+    }
+    return YES;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    if (gestureRecognizer == self.outsideTapGesture) {
+        return YES;
+    }
+    if ([NSStringFromClass([otherGestureRecognizer class]) hasPrefix:@"UIGobbler"]) { // UIGobblerGestureRecognizer
+        // UITableViewCell 处于左滑删除状态时禁止滑动返回
+        self.shouldBeRequiredToFail = YES;
+        return YES;
+    }
+    if ([otherGestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]] &&
+        [otherGestureRecognizer.view isKindOfClass:[UIScrollView class]]) {
+        UIScrollView *scrollView = (UIScrollView *)otherGestureRecognizer.view;
+        if (scrollView.contentOffset.x == 0 && scrollView.contentSize.width > scrollView.bounds.size.width) {
+            return YES;
+        }
+    }
+    
+    if ([NSStringFromClass([otherGestureRecognizer class]) hasPrefix:@"UIScrollView"] &&
+        [NSStringFromClass([otherGestureRecognizer.view class]) hasPrefix:@"UITableView"] &&
+        ![otherGestureRecognizer.view isKindOfClass:[UITableView class]]) {
+        // iOS 7.0 以上滑动删除的手势是 UIUIScrollViewPanGestureRecognizer，view 是 UITableViewCellScrollView(iOS7) 和 UITableViewWrapperView(iOS8)
+        return YES;
+    }
+    return NO;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRequireFailureOfGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 11.0) {
+        // iOS11上如果ScrollView上的Pan手势没有响应，Cell上左滑的操作也不会响应
+        if ([otherGestureRecognizer isMemberOfClass:[UIPanGestureRecognizer class]] && [otherGestureRecognizer.view isKindOfClass:[UITableView class]]) {
+            return YES;
+        }
+        //ios 12左滑s操作会进入这里， _UISwipeActionPanGestureRecognizer
+        if ([otherGestureRecognizer isMemberOfClass:NSClassFromString(@"_UISwipeActionPanGestureRecognizer")] && [otherGestureRecognizer.view isKindOfClass:[UITableView class]]) {
+            return YES;
+        }
+
+    }
+    return NO;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldBeRequiredToFailByGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    if ([NSStringFromClass([otherGestureRecognizer class]) hasPrefix:@"UIGobbler"]) { // UIGobblerGestureRecognizer
+        // UITableViewCell 处于左滑删除状态时禁止滑动返回
+        self.shouldBeRequiredToFail = YES;
+    }
+    return NO;
+}
+
+#pragma mark - Gesture Recognizer
+- (void)paningGestureReceive:(UIPanGestureRecognizer *)recoginzer
+{
+    // If the viewControllers has only one vc or disable the interaction, then return.
+    if (self.viewControllers.count <= 1 || !self.canDragBack || self.shouldBeRequiredToFail) return;
+    
+    // we get the touch position by the window's coordinate
+    CGPoint touchPoint = [recoginzer locationInView:self.view.superview];
+    
+    // begin paning, show the backgroundView(last screenshot),if not exist, create it.
+    if (recoginzer.state == UIGestureRecognizerStateBegan) {
+        
+        _isMoving = YES;
+        startTouch = touchPoint;
+        self.originalFrame = self.view.frame;
+        if (!self.backgroundView) {
+            self.backgroundView = [[UIView alloc] initWithFrame:self.view.frame];
+            self.backgroundView.backgroundColor = [UIColor whiteColor];
+            blackMask = [[UIView alloc] initWithFrame:self.backgroundView.bounds];
+            blackMask.backgroundColor = [UIColor blackColor];
+            [self.backgroundView addSubview:blackMask];
+        }
+        
+        if (self.backgroundView.superview == nil) {
+            [self.view.superview insertSubview:self.backgroundView belowSubview:self.view];
+        }
+        
+        self.backgroundView.hidden = NO;
+        
+        if (lastScreenShotView) {
+            [lastScreenShotView removeFromSuperview];
+        }
+        NSString *cacheKey = [self cacheKeyForViewController:self.topViewControllerPrevious];
+        lastScreenShotView = self.screenShots[cacheKey];
+        if (lastScreenShotView) {
+            if (lastScreenShotView.width == self.view.width && lastScreenShotView.height == self.view.height) {
+                [self.backgroundView insertSubview:lastScreenShotView belowSubview:blackMask];
+            }
+        }
+        
+        //End paning, always check that if it should move right or move left automatically
+    }else if (recoginzer.state == UIGestureRecognizerStateEnded){
+        
+        if (touchPoint.x - startTouch.x > 80)
+        {
+            // 使用 4.0 的 block 动画接口，完成时在 block 中调用 `popViewControllerAnimated:` 会crash
+            [UIView beginAnimations:@"back to pop animation" context:NULL];
+            [UIView setAnimationDelegate:self];
+            [UIView setAnimationDidStopSelector:@selector(animationDidStop:finished:context:)];
+            [self moveViewWithX:CGRectGetMaxX(self.originalFrame)];
+            [UIView commitAnimations];
+        }
+        else
+        {
+            [UIView animateWithDuration:0.3 animations:^{
+                [self moveViewWithX:self.originalFrame.origin.x];
+            } completion:^(BOOL finished) {
+                _isMoving = NO;
+                self.backgroundView.hidden = YES;
+            }];
+            
+        }
+        return;
+        
+        // cancal panning, alway move to left side automatically
+    }else if (recoginzer.state == UIGestureRecognizerStateCancelled){
+        
+        [UIView animateWithDuration:0.3 animations:^{
+            [self moveViewWithX:self.originalFrame.origin.x];
+        } completion:^(BOOL finished) {
+            _isMoving = NO;
+            self.backgroundView.hidden = YES;
+        }];
+        
+        return;
+    }
+    
+    // it keeps move with touch
+    if (_isMoving) {
+        [self moveViewWithX:touchPoint.x - startTouch.x + self.originalFrame.origin.x];
+    }
+}
+
+- (void)animationDidStop:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context {
+    if ([animationID isEqualToString:@"back to pop animation"]) {
+        [self popViewControllerAnimated:NO];
+        CGRect frame = self.view.frame;
+        frame.origin.x = self.originalFrame.origin.x;
+        self.view.frame = frame;
+        
+        _isMoving = NO;
+        self.backgroundView.hidden = YES;
+    }
+}
+
+#pragma mark - Utility Methods
+- (void)snapshotCurrentView {
+    UIView *snapshot = self.tabBarController ? self.tabBarController.view : self.view;
+    snapshot = [snapshot snapshotViewAfterScreenUpdates:NO];
+    if (snapshot) {
+        self.screenShots[[self cacheKeyForViewController:self.topViewController]] = snapshot;
+    }
+}
+
+- (NSString *)cacheKeyForViewController:(UIViewController *)viewController {
+    return [NSString stringWithFormat:@"%ld", viewController];
+}
+
+- (UIViewController *)topViewControllerPrevious {
+    NSInteger index = self.viewControllers.count - 2;
+    return index >= 0 ? self.viewControllers[index] : nil;
+}
+
+- (void)moveViewWithX:(float)x {
+    x = MIN(MAX(self.originalFrame.origin.x, x), CGRectGetMaxX(self.originalFrame));
+    
+    CGRect frame = self.view.frame;
+    frame.origin.x = x;
+    self.view.frame = frame;
+    
+    lastScreenShotView.transform = CGAffineTransformMakeTranslation((x - CGRectGetMaxX(self.originalFrame)) / 3.0, 0.0);
+    blackMask.alpha = 0.3 - (x-self.originalFrame.origin.x) / self.originalFrame.size.width / 3.0;
+}
+
+//- (void)themeColorDidChanged:(NSNotification *)notify {
+//    self.navigationBar.tintColor = [UIColor barTintColor];
+//    [self.navigationBar setBackgroundImage:[UIImage imageWithSolidColor:COLOR(250, 250, 250) size:CGSizeMake(5, 64)] forBarMetrics:UIBarMetricsDefault];
+//}
+
+//- (SearchView *)searchViewFromController:(UIViewController *)controller {
+//    SearchView *searchView = nil;
+//
+//    if ([controller respondsToSelector:@selector(currentController)]) {
+//       searchView = [(id<CurrentControllerProtocol>)controller currentController].searchView;
+//    } else if ([controller isKindOfClass:[COSegmentViewController class]]) {
+//        searchView = [(COSegmentViewController *)controller currentController].searchView;
+//    } else if ([controller isKindOfClass:[InviteDealSegmentViewController class]]) {
+//        searchView = controller.childViewControllers[((InviteDealSegmentViewController *)controller).currentIndex].searchView;
+//    } else {
+//        searchView = controller.searchView;
+//    }
+//    return searchView;
+//}
+
+//- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    //pop操作
+//    SearchView *searchView = [self searchViewFromController:viewController];
+//    if (searchView.isActive && !searchView.isSearchViewController) {
+//        if (searchView) {
+//            [searchView addSubview:searchView.searchBgView];
+//            [navigationController.view bringSubviewToFront:searchView];
+//            searchView.searchBgView.frame = CGRectMake(0, 0, searchView.bounds.size.width, searchView.searchBgView.bounds.size.height);
+//            navigationController.navigationBar.tintColor = [UIColor barTintColor];
+//            [navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: COLOR(51, 51, 51), NSFontAttributeName: [UIFont systemFontOfSize:19.0]}];
+//            if (viewController.navigationItem.titleView) {
+//                viewController.navigationItem.titleView.hidden = NO;
+//            }
+//        }
+//    }
+//}
+
+//- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+//    SearchView *searchView = [self searchViewFromController:viewController];
+//    [searchView showSearch:animated];
+//}
+
+- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
+                                  animationControllerForOperation:(UINavigationControllerOperation)operation
+                                               fromViewController:(UIViewController *)fromVC
+                                                 toViewController:(UIViewController *)toVC {
+    if (operation == UINavigationControllerOperationPop) {
+//        SearchView *searchView = [self searchViewFromController:toVC];
+//        [searchView showSearch:NO];
+//        if (searchView.isActive && !searchView.isSearchViewController) {
+//            searchView.center = CGPointMake(searchView.center.x - searchView.bounds.size.width, searchView.center.y);
+//            [UIView animateWithDuration:0.3 animations:^{
+//                searchView.center = CGPointMake(searchView.bounds.size.width / 2, searchView.center.y);
+//            }];
+//            CGFloat top = [UIApplication sharedApplication].statusBarFrame.size.height;
+//            if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad && toVC.navigationController.modalPresentationStyle == UIModalPresentationFormSheet) {
+//                top = 0;
+//            }
+//            searchView.searchBgView.frame = CGRectMake(0, -top, searchView.bounds.size.width, 44 + top);
+//            [toVC.navigationController.navigationBar addSubview:searchView.searchBgView];
+//            navigationController.navigationBar.tintColor = [UIColor clearColor];
+//            [navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor clearColor], NSFontAttributeName: [UIFont systemFontOfSize:19.0]}];
+//            if (toVC.navigationItem.titleView) {
+//                toVC.navigationItem.titleView.hidden = YES;
+//            }
+//        }
+    } else if (operation == UINavigationControllerOperationPush) {
+        //push操作
+//        SearchView *searchView = [self searchViewFromController:fromVC];
+//        [searchView hiddenSearch:YES];
+    }
+    return nil;
+}
+
+@end

@@ -1,0 +1,2 @@
+›;Pods/OpenCV/opencv2.framework/Versions/Current/Headers/core :
+ž¢¯ÌÎ

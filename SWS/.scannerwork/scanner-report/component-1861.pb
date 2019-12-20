@@ -1,0 +1,1 @@
+Å?Pods/OpenCV/opencv2.framework/Versions/A/Headers/features2d/hal :Ä

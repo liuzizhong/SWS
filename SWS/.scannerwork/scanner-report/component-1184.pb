@@ -1,0 +1,1 @@
+ 	MPods/AMap3DMap-NO-IDFA/MAMapKit.framework/Headers/MAAnnotationMoveAnimation.h 2objcXBh

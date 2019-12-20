@@ -1,0 +1,1 @@
+¦2Supports/LTScrollView/LTCollectionFlowLayout.swift 2swiftX+h

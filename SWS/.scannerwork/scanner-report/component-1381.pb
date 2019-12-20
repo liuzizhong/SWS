@@ -1,0 +1,2 @@
+Â
+êPods/NVActivityIndicatorView/NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallClipRotateMultiple.swift 2swiftXah

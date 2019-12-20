@@ -1,0 +1,1 @@
+É=Pods/OpenCV/opencv2.framework/Headers/imgcodecs/imgcodecs_c.h 2objcX–h

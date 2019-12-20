@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="51" id="KGk-i7-Jjw" customClass="SW_AuditRepairOrderTypeHeader" customModule="SWS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="602" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="602" height="50"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7D-iW-JWz">
+                        <rect key="frame" x="0.0" y="0.0" width="602" height="50"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rnp-X3-wQh" customClass="QMUIButton">
+                                <rect key="frame" x="101" y="4.5" width="66" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="GEL-ml-Abl"/>
+                                    <constraint firstAttribute="width" constant="66" id="qzj-Ih-bhi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="维修配件">
+                                    <color key="titleColor" red="0.1647058824" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="selected">
+                                    <color key="titleColor" red="0.074509803920000006" green="0.46666666670000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="accessoriesBtnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="RCt-qr-3WT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1k-0R-hFC" customClass="QMUIButton">
+                                <rect key="frame" x="15" y="4.5" width="66" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="66" id="fpm-wh-oL2"/>
+                                    <constraint firstAttribute="height" constant="40" id="jcH-21-IoR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="维修项目">
+                                    <color key="titleColor" red="0.1647058824" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="selected">
+                                    <color key="titleColor" red="0.074509803920000006" green="0.46666666670000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="itemBtnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="F5M-Ut-Sg8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wGZ-ix-yQZ" customClass="QMUIButton">
+                                <rect key="frame" x="187" y="4.5" width="66" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="3Z5-Jx-HIi"/>
+                                    <constraint firstAttribute="width" constant="66" id="kyn-qC-pwC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="维修精品">
+                                    <color key="titleColor" red="0.1647058824" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="selected">
+                                    <color key="titleColor" red="0.074509803920000006" green="0.46666666670000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="boutiqueBtnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Fsf-z6-BkH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9sQ-4S-6bg" customClass="QMUIButton">
+                                <rect key="frame" x="273" y="4.5" width="66" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="66" id="BDb-eS-2ct"/>
+                                    <constraint firstAttribute="height" constant="40" id="MWP-QQ-F2W"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="其他费用">
+                                    <color key="titleColor" red="0.1647058824" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="selected">
+                                    <color key="titleColor" red="0.074509803920000006" green="0.46666666670000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="otherBtnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="tzk-Y6-hVu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ke-fz-Bex" customClass="QMUIButton">
+                                <rect key="frame" x="445" y="4.5" width="50" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="We8-u4-48F"/>
+                                    <constraint firstAttribute="height" constant="40" id="zv4-7b-khw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="优惠券">
+                                    <color key="titleColor" red="0.1647058824" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="selected">
+                                    <color key="titleColor" red="0.074509803920000006" green="0.46666666670000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="couponsBtnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="04V-L3-t5Z"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rMQ-2h-lbZ" customClass="QMUIButton">
+                                <rect key="frame" x="515" y="4.5" width="66" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="d1m-Qe-jon"/>
+                                    <constraint firstAttribute="width" constant="66" id="gTV-gr-l9v"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="建议项目">
+                                    <color key="titleColor" red="0.1647058824" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="selected">
+                                    <color key="titleColor" red="0.074509803920000006" green="0.46666666670000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="couponsBtnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="qYn-iH-FtN"/>
+                                    <action selector="suggestBtnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="HYh-Y3-QQA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3M1-ya-Arw" customClass="QMUIButton">
+                                <rect key="frame" x="359" y="4.5" width="66" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="9bm-IM-WnI"/>
+                                    <constraint firstAttribute="width" constant="66" id="kNP-nT-Zcw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="活动套餐">
+                                    <color key="titleColor" red="0.1647058824" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="selected">
+                                    <color key="titleColor" red="0.074509803920000006" green="0.46666666670000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="repairPackageBtnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="30w-X3-phE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="14D-DM-ACb"/>
+                            <constraint firstItem="rMQ-2h-lbZ" firstAttribute="centerY" secondItem="z1k-0R-hFC" secondAttribute="centerY" id="1G0-ry-9zy"/>
+                            <constraint firstItem="rnp-X3-wQh" firstAttribute="leading" secondItem="z1k-0R-hFC" secondAttribute="trailing" constant="20" id="3r0-aU-eXG"/>
+                            <constraint firstItem="rMQ-2h-lbZ" firstAttribute="leading" secondItem="3ke-fz-Bex" secondAttribute="trailing" constant="20" id="5ac-oc-A5j"/>
+                            <constraint firstItem="3ke-fz-Bex" firstAttribute="centerY" secondItem="z1k-0R-hFC" secondAttribute="centerY" id="6e2-CQ-c3s"/>
+                            <constraint firstItem="rnp-X3-wQh" firstAttribute="centerY" secondItem="z1k-0R-hFC" secondAttribute="centerY" id="6q0-Yq-wvL"/>
+                            <constraint firstItem="z1k-0R-hFC" firstAttribute="leading" secondItem="i7D-iW-JWz" secondAttribute="leading" constant="15" id="9uT-q8-NYZ"/>
+                            <constraint firstItem="3ke-fz-Bex" firstAttribute="leading" secondItem="3M1-ya-Arw" secondAttribute="trailing" constant="20" id="AIW-kI-UYV"/>
+                            <constraint firstItem="wGZ-ix-yQZ" firstAttribute="leading" secondItem="rnp-X3-wQh" secondAttribute="trailing" constant="20" id="Eaa-xN-IWD"/>
+                            <constraint firstItem="wGZ-ix-yQZ" firstAttribute="centerY" secondItem="z1k-0R-hFC" secondAttribute="centerY" id="KJc-B1-D1h"/>
+                            <constraint firstItem="z1k-0R-hFC" firstAttribute="top" secondItem="i7D-iW-JWz" secondAttribute="top" constant="4.5" id="M3T-Ne-ERy"/>
+                            <constraint firstItem="3M1-ya-Arw" firstAttribute="leading" secondItem="9sQ-4S-6bg" secondAttribute="trailing" constant="20" id="Pg5-wR-w7a"/>
+                            <constraint firstItem="9sQ-4S-6bg" firstAttribute="leading" secondItem="wGZ-ix-yQZ" secondAttribute="trailing" constant="20" id="V4b-I2-BAV"/>
+                            <constraint firstItem="3M1-ya-Arw" firstAttribute="centerY" secondItem="z1k-0R-hFC" secondAttribute="centerY" id="WVS-7y-bVU"/>
+                            <constraint firstAttribute="bottom" secondItem="z1k-0R-hFC" secondAttribute="bottom" constant="4.5" id="p05-m8-IEq"/>
+                            <constraint firstItem="9sQ-4S-6bg" firstAttribute="centerY" secondItem="z1k-0R-hFC" secondAttribute="centerY" id="tZM-1n-3Mu"/>
+                            <constraint firstAttribute="trailing" secondItem="rMQ-2h-lbZ" secondAttribute="trailing" constant="15" id="w6B-6r-vhJ"/>
+                        </constraints>
+                    </scrollView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="i7D-iW-JWz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="59H-lJ-6E9"/>
+                    <constraint firstAttribute="trailing" secondItem="i7D-iW-JWz" secondAttribute="trailing" id="7da-KI-itB"/>
+                    <constraint firstItem="i7D-iW-JWz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="9DL-5Q-Sef"/>
+                    <constraint firstAttribute="bottom" secondItem="i7D-iW-JWz" secondAttribute="bottom" id="oqZ-Vs-FRh"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="accessoriesBtn" destination="rnp-X3-wQh" id="2V4-hL-3Yy"/>
+                <outlet property="boutiqueBtn" destination="wGZ-ix-yQZ" id="Wgc-iL-QLj"/>
+                <outlet property="couponsBtn" destination="3ke-fz-Bex" id="26p-6l-raP"/>
+                <outlet property="itemBtn" destination="z1k-0R-hFC" id="7Tc-ro-2ha"/>
+                <outlet property="otherBtn" destination="9sQ-4S-6bg" id="yJx-Hl-e2l"/>
+                <outlet property="repairPackageBtn" destination="3M1-ya-Arw" id="HQn-CH-Dos"/>
+                <outlet property="scrollView" destination="i7D-iW-JWz" id="EWa-oc-LfA"/>
+                <outlet property="suggestBtn" destination="rMQ-2h-lbZ" id="NvR-NK-sxm"/>
+                <outlet property="suggestLeftConstraint" destination="5ac-oc-A5j" id="JhZ-lb-2ei"/>
+                <outlet property="suggestWidthConstraint" destination="gTV-gr-l9v" id="4DD-d6-Ce6"/>
+                <outletCollection property="options" destination="z1k-0R-hFC" collectionClass="NSMutableArray" id="5Ld-bv-7xL"/>
+                <outletCollection property="options" destination="rnp-X3-wQh" collectionClass="NSMutableArray" id="Ing-yi-GC6"/>
+                <outletCollection property="options" destination="wGZ-ix-yQZ" collectionClass="NSMutableArray" id="IwW-Mn-upR"/>
+                <outletCollection property="options" destination="9sQ-4S-6bg" collectionClass="NSMutableArray" id="bTS-W2-xPK"/>
+                <outletCollection property="options" destination="3M1-ya-Arw" collectionClass="NSMutableArray" id="5Qe-XZ-cWt"/>
+                <outletCollection property="options" destination="3ke-fz-Bex" collectionClass="NSMutableArray" id="dD3-eR-bzZ"/>
+                <outletCollection property="options" destination="rMQ-2h-lbZ" collectionClass="NSMutableArray" id="njh-Io-efh"/>
+            </connections>
+            <point key="canvasLocation" x="172.80000000000001" y="153.82308845577214"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -1,0 +1,1 @@
+±@Pods/OpenCV/opencv2.framework/Versions/A/Headers/imgcodecs/ios.h 2objcX:h

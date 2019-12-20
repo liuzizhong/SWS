@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="76" id="KGk-i7-Jjw" customClass="SW_TempCustomerListCell" customModule="SWS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="76"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="75.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="correspondent_addressbook_icon_personalavatar_normal" translatesAutoresizingMaskIntoConstraints="NO" id="W6y-yT-oAn">
+                        <rect key="frame" x="15" y="11" width="54" height="54"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="54" id="HN9-KV-anh"/>
+                            <constraint firstAttribute="width" constant="54" id="in6-zd-HcI"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="correspondent_addressbook_time" translatesAutoresizingMaskIntoConstraints="NO" id="wdZ-Kl-GMP">
+                        <rect key="frame" x="79" y="46" width="11" height="11"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2134234234" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gov-rR-suO">
+                        <rect key="frame" x="79" y="15" width="97" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(调档中)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpg-cX-eil">
+                        <rect key="frame" x="257" y="44" width="48" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="48" id="QPd-wr-A77"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.074509803920000006" green="0.46666666670000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正在接访 时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W30-Ko-OhN">
+                        <rect key="frame" x="95" y="44.5" width="77" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="wdZ-Kl-GMP" firstAttribute="leading" secondItem="W6y-yT-oAn" secondAttribute="trailing" constant="10" id="0bL-aM-G3x"/>
+                    <constraint firstAttribute="trailing" secondItem="qpg-cX-eil" secondAttribute="trailing" constant="15" id="1vP-rt-AC2"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gov-rR-suO" secondAttribute="trailing" constant="15" id="48I-2F-GQO"/>
+                    <constraint firstItem="qpg-cX-eil" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="W30-Ko-OhN" secondAttribute="trailing" constant="10" id="Q6s-pf-ycZ"/>
+                    <constraint firstItem="W30-Ko-OhN" firstAttribute="leading" secondItem="wdZ-Kl-GMP" secondAttribute="trailing" constant="5" id="VbN-Mi-djQ"/>
+                    <constraint firstItem="W6y-yT-oAn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="km1-Y0-CxW"/>
+                    <constraint firstItem="qpg-cX-eil" firstAttribute="centerY" secondItem="wdZ-Kl-GMP" secondAttribute="centerY" id="l7f-NU-CVJ"/>
+                    <constraint firstItem="W6y-yT-oAn" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="nUA-hG-P7E"/>
+                    <constraint firstItem="wdZ-Kl-GMP" firstAttribute="top" secondItem="gov-rR-suO" secondAttribute="bottom" constant="11.5" id="opH-fC-jjT"/>
+                    <constraint firstItem="W30-Ko-OhN" firstAttribute="centerY" secondItem="wdZ-Kl-GMP" secondAttribute="centerY" id="qTe-j5-r1O"/>
+                    <constraint firstItem="gov-rR-suO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="sjt-JV-kKO"/>
+                    <constraint firstItem="gov-rR-suO" firstAttribute="leading" secondItem="W6y-yT-oAn" secondAttribute="trailing" constant="10" id="wqC-hQ-m5Y"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="lastDateLb" destination="W30-Ko-OhN" id="GQ9-yH-oWd"/>
+                <outlet property="stateLb" destination="qpg-cX-eil" id="c5m-9H-c8J"/>
+                <outlet property="tempNameLb" destination="gov-rR-suO" id="RX9-8O-txW"/>
+            </connections>
+            <point key="canvasLocation" x="137.59999999999999" y="169.11544227886057"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="correspondent_addressbook_icon_personalavatar_normal" width="54" height="54"/>
+        <image name="correspondent_addressbook_time" width="11" height="11"/>
+    </resources>
+</document>

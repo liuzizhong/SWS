@@ -1,0 +1,1 @@
+æBPods/OpenCV/opencv2.framework/Versions/Current/Headers/imgproc/hal :å

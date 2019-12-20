@@ -1,0 +1,61 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Description of what the lane does"
+
+	#fastlane [lane] key:value key2:value2
+
+#------------------------------------分割线---------------------------------------------
+
+	# fastlane appstore1 bnum:build号   vnum:version号
+	lane :appstore1 do |op|
+
+
+	#指定scheme, 可通过Xcode->Product->Scheme->ManageSchemes查看
+	scheme = "SWS"
+	#当前时间字符串，用于输出文件夹的后缀，遵循 Xcode 的输出规则
+	currentTime = Time.new.strftime("%Y-%m-%d %H-%M-%S")
+	#指定输出文件夹路径, 将ipa_name换成你想要的ipa名称
+	output_path = "/Users/jayway/Documents/work/uploadFile/SWS #{currentTime}"
+	#指定输出ipa名称
+	ipa_name = "SWS"
+
+
+	  increment_version_number(version_number: op[:vnum])#vnum 是参数名，命令行调用的时候输入的参数名,设置version版本
+
+	  increment_build_number(build_number: op[:bnum])#设置build版本
+
+	 cert
+ 	 #sigh  
+       	 desc "appstore"
+
+ 	 gym(scheme: "#{scheme}",
+ 	     workspace: "SWS.xcworkspace", # 可省略
+  	    configuration: "Release",         # Debug or Release
+  	    clean: true,                    #清空上次打包信息
+  	    export_method:"app-store",    
+            output_directory:"#{output_path}",
+	    archive_path:"#{output_path}/Archive",
+	    output_name: "#{ipa_name}",
+ 	 ) 
+
+	 deliver
+	end
+
+
+end

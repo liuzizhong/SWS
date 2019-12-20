@@ -1,0 +1,1 @@
+š,Pods/HappyDNS/HappyDNS/Local/QNTxtResolver.m 2objcXnh

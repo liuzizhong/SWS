@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SW_InfoHeaderView" customModule="SWS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="151"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personalcenter_icon_personalavatar" translatesAutoresizingMaskIntoConstraints="NO" id="QON-4D-UUB">
+                    <rect key="frame" x="280" y="30" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="15g-0j-qB5"/>
+                        <constraint firstAttribute="width" constant="80" id="8NK-Vu-OKi"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZA-28-v8G">
+                    <rect key="frame" x="15" y="35" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                    <color key="textColor" red="0.10196078431372549" green="0.10196078431372549" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="董事长" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S28-vM-9gA">
+                    <rect key="frame" x="15" y="47" width="55.5" height="21.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="uZA-28-v8G" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="0Bs-Ee-QEd"/>
+                <constraint firstItem="uZA-28-v8G" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="35" id="57O-fL-BJD"/>
+                <constraint firstItem="QON-4D-UUB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="uZA-28-v8G" secondAttribute="trailing" constant="15" id="7zc-io-C0w"/>
+                <constraint firstItem="S28-vM-9gA" firstAttribute="top" secondItem="uZA-28-v8G" secondAttribute="bottom" constant="12" id="EzB-2z-f4u"/>
+                <constraint firstItem="S28-vM-9gA" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="MWB-4l-xmw"/>
+                <constraint firstItem="QON-4D-UUB" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="30" id="P3y-im-TVz"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="QON-4D-UUB" secondAttribute="trailing" constant="15" id="gtM-xz-Bjh"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="depamentLb" destination="S28-vM-9gA" id="1TZ-vs-6bk"/>
+                <outlet property="iconImageView" destination="QON-4D-UUB" id="xAk-SW-Tez"/>
+                <outlet property="nameLb" destination="uZA-28-v8G" id="mek-wh-hzT"/>
+            </connections>
+            <point key="canvasLocation" x="32.799999999999997" y="-207.34632683658174"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="personalcenter_icon_personalavatar" width="190" height="190"/>
+    </resources>
+</document>

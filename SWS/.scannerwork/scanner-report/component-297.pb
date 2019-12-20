@@ -1,0 +1,1 @@
+©/Supports/LTScrollView/LTTableViewProtocal.swift 2swiftX6h

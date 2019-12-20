@@ -1,0 +1,1 @@
+ÄKSWS/Classes/QrCode(äºŒç»´ç )/Controllers/SW_CommonScanViewController.swift 2swiftX±h

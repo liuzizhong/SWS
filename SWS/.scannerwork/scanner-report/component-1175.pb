@@ -1,0 +1,1 @@
+—	FPods/AMap3DMap-NO-IDFA/MAMapKit.framework/Headers/MAGeodesicPolyline.h 2objcX4h

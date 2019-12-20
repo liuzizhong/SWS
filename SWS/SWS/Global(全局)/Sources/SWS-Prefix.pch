@@ -1,0 +1,35 @@
+//
+//  SWS-Prefix.pch
+//  SWS
+//
+//  Created by jayway on 2018/4/2.
+//  Copyright © 2018年 yuanrui. All rights reserved.
+//
+
+#ifndef SWS_Prefix_pch
+#define SWS_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#ifdef __cplusplus
+#import <opencv2/opencv.hpp>
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import "UIView+Additions.h"
+#endif
+
+#define UIUserInterfaceIdiomIsPad() ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad)
+#define COLOR(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
+
+#if !defined(DEBUG)
+#define NSLog(...)
+#endif
+
+
+#endif /* SWS_Prefix_pch */
+
+
+

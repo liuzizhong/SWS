@@ -1,0 +1,1 @@
+“XPods/QMUIKit/QMUIKit/QMUIComponents/NavigationBarTransition/UINavigationBar+Transition.m 2objcX/h

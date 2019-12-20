@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SW_ArticleCollectionBarView" customModule="SWS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="阅读  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHT-HF-390">
+                    <rect key="frame" x="15" y="0.5" width="29" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="G7g-NO-jFf"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PpZ-7B-W9Q">
+                    <rect key="frame" x="290" y="0.5" width="85" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="85" id="G1X-yL-bZt"/>
+                        <constraint firstAttribute="height" constant="44" id="RAV-8s-5zD"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
+                    <state key="normal" image="inform_uncollection">
+                        <color key="titleColor" red="0.4431372549" green="0.4431372549" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="disabled">
+                        <color key="titleColor" red="0.63921568630000003" green="0.63921568630000003" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="selected" image="inform_collection"/>
+                    <connections>
+                        <action selector="collectionBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="qkk-gA-UD4"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H29-fs-Qnh">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="0.5"/>
+                    <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="8XJ-eM-E1g"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="zHT-HF-390" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="1bi-OE-gd7"/>
+                <constraint firstItem="PpZ-7B-W9Q" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zHT-HF-390" secondAttribute="trailing" constant="15" id="3SH-nG-2cl"/>
+                <constraint firstItem="zHT-HF-390" firstAttribute="top" secondItem="H29-fs-Qnh" secondAttribute="bottom" id="Cx7-N7-kji"/>
+                <constraint firstItem="PpZ-7B-W9Q" firstAttribute="top" secondItem="H29-fs-Qnh" secondAttribute="bottom" id="DGj-S6-duS"/>
+                <constraint firstItem="H29-fs-Qnh" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="GPU-VQ-xd0"/>
+                <constraint firstItem="PpZ-7B-W9Q" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Igh-zp-GBI"/>
+                <constraint firstAttribute="trailing" secondItem="H29-fs-Qnh" secondAttribute="trailing" id="QCV-QK-Jpf"/>
+                <constraint firstItem="H29-fs-Qnh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Zya-SE-LPT"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="collectionBtn" destination="PpZ-7B-W9Q" id="Ofb-oQ-3oM"/>
+                <outlet property="readCountLb" destination="zHT-HF-390" id="RnN-Ak-7eO"/>
+            </connections>
+            <point key="canvasLocation" x="138.40000000000001" y="347.22638680659674"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="inform_collection" width="20" height="20"/>
+        <image name="inform_uncollection" width="20" height="20"/>
+    </resources>
+</document>

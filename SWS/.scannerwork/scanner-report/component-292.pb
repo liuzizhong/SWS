@@ -1,0 +1,1 @@
+¤+Supports/LTScrollView/LTSimpleManager.swift 2swiftX»h

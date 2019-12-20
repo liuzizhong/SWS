@@ -1,0 +1,1 @@
+îASupports/MKNetworkKit/Categories/NSString+MKNetworkKitAdditions.m 2objcXdh

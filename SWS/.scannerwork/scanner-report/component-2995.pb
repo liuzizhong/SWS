@@ -1,0 +1,1 @@
+³SPods/AMapLocation-NO-IDFA/AMapLocationKit.framework/Headers/AMapGeoFenceRegionObj.h 2objcXyh

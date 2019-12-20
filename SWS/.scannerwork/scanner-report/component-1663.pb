@@ -1,0 +1,1 @@
+ÿIPods/AMapSearch-NO-IDFA/AMapSearchKit.framework/Headers/AMapSearchError.h 2objcXDh

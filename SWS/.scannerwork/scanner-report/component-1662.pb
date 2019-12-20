@@ -1,0 +1,1 @@
+þGPods/AMapSearch-NO-IDFA/AMapSearchKit.framework/Headers/AMapCommonObj.h 2objcX¿h

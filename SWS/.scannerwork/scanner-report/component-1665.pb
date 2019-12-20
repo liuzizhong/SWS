@@ -1,0 +1,1 @@
+ÅQPods/AMapSearch-NO-IDFA/AMapSearchKit.framework/Headers/AMapNearbySearchManager.h 2objcXVh

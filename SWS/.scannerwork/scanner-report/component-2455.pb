@@ -1,0 +1,1 @@
+—XPods/QMUIKit/QMUIKit/QMUIComponents/NavigationBarTransition/UINavigationBar+Transition.h 2objcXh

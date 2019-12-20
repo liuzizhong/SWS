@@ -1,0 +1,1 @@
+°=Pods/OpenCV/opencv2.framework/Headers/imgproc/hal/interface.h 2objcX/h

@@ -1,0 +1,1 @@
+°$Supports/SwiftScan/LBXScanView.swift 2swiftXÚh

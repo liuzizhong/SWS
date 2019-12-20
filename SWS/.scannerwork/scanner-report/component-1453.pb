@@ -1,0 +1,1 @@
+­OPods/AMapFoundation-NO-IDFA/AMapFoundationKit.framework/Headers/AMapURLSearch.h 2objcX*h

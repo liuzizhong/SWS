@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="119" id="KGk-i7-Jjw" customClass="SW_CustomerLevelChoiceCell" customModule="SWS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="119"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="119"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="客户级别" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RdP-yn-wBA">
+                        <rect key="frame" x="15" y="20" width="49.5" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" priority="900" constant="15" id="FBC-ag-ty3"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="2Rj-64-Fr0">
+                        <rect key="frame" x="15" y="45" width="290" height="57"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Uoc-Si-8aG">
+                                <rect key="frame" x="0.0" y="0.0" width="290" height="57"/>
+                                <subviews>
+                                    <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQX-z7-Mey" customClass="QMUIButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="57"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="NJY-Ys-Fcw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="H" image="text_icon_checkbox_normal">
+                                            <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="selected" image="text_icon_checkbox_selected "/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="spacingBetweenImageAndTitle">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="optionClickAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="hd4-0a-zwI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jiH-yp-qcy" customClass="QMUIButton">
+                                        <rect key="frame" x="41.5" y="0.0" width="40" height="57"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="A" image="text_icon_checkbox_normal">
+                                            <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="selected" image="text_icon_checkbox_selected "/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="spacingBetweenImageAndTitle">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="optionClickAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="dw2-ht-0za"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53F-Cg-u2P" customClass="QMUIButton">
+                                        <rect key="frame" x="83.5" y="0.0" width="40" height="57"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="B" image="text_icon_checkbox_normal">
+                                            <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="selected" image="text_icon_checkbox_selected "/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="spacingBetweenImageAndTitle">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="optionClickAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="9Mj-We-Ggy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OaZ-bO-DT5" customClass="QMUIButton">
+                                        <rect key="frame" x="125" y="0.0" width="40" height="57"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="C" image="text_icon_checkbox_normal">
+                                            <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="selected" image="text_icon_checkbox_selected "/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="spacingBetweenImageAndTitle">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="optionClickAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="fXj-p0-n6v"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qsv-Nb-Olf" customClass="QMUIButton">
+                                        <rect key="frame" x="166.5" y="0.0" width="40" height="57"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="O" image="text_icon_checkbox_normal_disabled">
+                                            <color key="titleColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="disabled">
+                                            <color key="titleColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="selected" image="text_icon_checkbox_selected_disabled"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="spacingBetweenImageAndTitle">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Xp-d1-uPU" customClass="QMUIButton">
+                                        <rect key="frame" x="208.5" y="0.0" width="40" height="57"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="F" image="text_icon_checkbox_normal">
+                                            <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="selected" image="text_icon_checkbox_selected "/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="spacingBetweenImageAndTitle">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="optionClickAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="6md-NU-2r1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RkD-ff-2Zd" customClass="QMUIButton">
+                                        <rect key="frame" x="250" y="0.0" width="40" height="57"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="M" image="text_icon_checkbox_normal_disabled">
+                                            <color key="titleColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="disabled">
+                                            <color key="titleColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="selected" image="text_icon_checkbox_selected_disabled"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="spacingBetweenImageAndTitle">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="53F-Cg-u2P" firstAttribute="width" secondItem="pQX-z7-Mey" secondAttribute="width" id="6Rp-Vg-0M8"/>
+                                    <constraint firstItem="jiH-yp-qcy" firstAttribute="width" secondItem="pQX-z7-Mey" secondAttribute="width" id="OSS-Sb-NUa"/>
+                                    <constraint firstItem="OaZ-bO-DT5" firstAttribute="width" secondItem="pQX-z7-Mey" secondAttribute="width" id="Qad-z6-PsD"/>
+                                    <constraint firstItem="RkD-ff-2Zd" firstAttribute="width" secondItem="pQX-z7-Mey" secondAttribute="width" id="SbN-gB-ByM"/>
+                                    <constraint firstItem="Qsv-Nb-Olf" firstAttribute="width" secondItem="pQX-z7-Mey" secondAttribute="width" id="Y5z-DR-t6f"/>
+                                    <constraint firstAttribute="height" priority="900" constant="40" id="Y9r-rZ-fJ0"/>
+                                    <constraint firstItem="7Xp-d1-uPU" firstAttribute="width" secondItem="pQX-z7-Mey" secondAttribute="width" id="ZTL-bJ-VdH"/>
+                                </constraints>
+                            </stackView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="距上次接待或访问2天跟进一次" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5c-cQ-y6b">
+                                <rect key="frame" x="0.0" y="59" width="290" height="14.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="14.5" id="6G7-u6-Btr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Uoc-Si-8aG" secondAttribute="trailing" id="0e1-sE-Jj9"/>
+                            <constraint firstItem="k5c-cQ-y6b" firstAttribute="leading" secondItem="2Rj-64-Fr0" secondAttribute="leading" id="1hH-Yf-jar"/>
+                            <constraint firstItem="Uoc-Si-8aG" firstAttribute="leading" secondItem="2Rj-64-Fr0" secondAttribute="leading" id="Nhb-eJ-kSx"/>
+                            <constraint firstItem="k5c-cQ-y6b" firstAttribute="top" secondItem="Uoc-Si-8aG" secondAttribute="bottom" constant="2" id="Q0a-VD-mZL"/>
+                            <constraint firstAttribute="trailing" secondItem="k5c-cQ-y6b" secondAttribute="trailing" id="eXG-07-uw0"/>
+                            <constraint firstItem="Uoc-Si-8aG" firstAttribute="top" secondItem="2Rj-64-Fr0" secondAttribute="top" id="fRH-jq-9Tv"/>
+                        </constraints>
+                    </stackView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="59J-hW-exe">
+                        <rect key="frame" x="15" y="118.5" width="290" height="0.5"/>
+                        <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="Yqk-IM-oHO"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="RdP-yn-wBA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="6Cj-N3-gqb"/>
+                    <constraint firstAttribute="bottom" secondItem="2Rj-64-Fr0" secondAttribute="bottom" constant="17" id="B1W-A9-QeD"/>
+                    <constraint firstAttribute="bottom" secondItem="59J-hW-exe" secondAttribute="bottom" id="CNu-te-Sxb"/>
+                    <constraint firstAttribute="trailing" secondItem="59J-hW-exe" secondAttribute="trailing" constant="15" id="GBv-gu-3WE"/>
+                    <constraint firstItem="2Rj-64-Fr0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="KtT-DX-4dK"/>
+                    <constraint firstItem="RdP-yn-wBA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="MrG-8v-ODL"/>
+                    <constraint firstItem="2Rj-64-Fr0" firstAttribute="top" secondItem="RdP-yn-wBA" secondAttribute="bottom" constant="10" id="RuN-qI-Ljw"/>
+                    <constraint firstItem="59J-hW-exe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="Tgx-vD-Bmu"/>
+                    <constraint firstAttribute="trailing" secondItem="2Rj-64-Fr0" secondAttribute="trailing" constant="15" id="pLt-0V-K8z"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="tipLb" destination="k5c-cQ-y6b" id="hrl-Xj-t9X"/>
+                <outletCollection property="options" destination="jiH-yp-qcy" collectionClass="NSMutableArray" id="Lrh-4X-Xdb"/>
+                <outletCollection property="options" destination="pQX-z7-Mey" collectionClass="NSMutableArray" id="GzR-tA-hpm"/>
+                <outletCollection property="options" destination="53F-Cg-u2P" collectionClass="NSMutableArray" id="m14-wo-Taf"/>
+                <outletCollection property="options" destination="OaZ-bO-DT5" collectionClass="NSMutableArray" id="cAi-bx-cHO"/>
+                <outletCollection property="options" destination="7Xp-d1-uPU" collectionClass="NSMutableArray" id="tgo-NT-LpE"/>
+                <outletCollection property="options" destination="Qsv-Nb-Olf" collectionClass="NSMutableArray" id="agD-5c-8cV"/>
+                <outletCollection property="options" destination="RkD-ff-2Zd" collectionClass="NSMutableArray" id="m6e-t9-fhm"/>
+                <outletCollection property="OMBtns" destination="Qsv-Nb-Olf" collectionClass="NSMutableArray" id="jFg-X3-4nu"/>
+                <outletCollection property="OMBtns" destination="RkD-ff-2Zd" collectionClass="NSMutableArray" id="yP9-Je-Soa"/>
+            </connections>
+            <point key="canvasLocation" x="52.799999999999997" y="80.50974512743629"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="text_icon_checkbox_normal" width="15" height="15"/>
+        <image name="text_icon_checkbox_normal_disabled" width="15" height="15"/>
+        <image name="text_icon_checkbox_selected " width="15" height="15"/>
+        <image name="text_icon_checkbox_selected_disabled" width="15" height="15"/>
+    </resources>
+</document>

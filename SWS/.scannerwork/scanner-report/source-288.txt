@@ -1,0 +1,34 @@
+//
+//  MLNavigationController.h
+//  MultiLayerNavigation
+//
+//  Created by Feather Chan on 13-4-12.
+//  Copyright (c) 2013年 115. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@protocol MLNavigationControllerDelegate <NSObject>
+
+@optional
+
+- (BOOL)navigationControllerShouldDragback:(UINavigationController *)navigationController;
+
+- (void)popMLViewController;
+
+// iPad 上 MLNavigationController 默认支持 FormSheet 点击空白处 dismiss
+// 以下回调方法只在 MLNavigationController 刚 present 时回调给当前最顶层的 UIViewController
+- (BOOL)navigationControllerShouldDismissFormSheet:(UINavigationController *)navigationController;
+- (BOOL)navigationControllerWillDismissFormSheet:(UINavigationController *)navigationController;
+
+@end
+
+/** 支持右滑返回
+ 基于第三方库修改：https://github.com/vinqon/MultiLayerNavigation
+ */
+@interface MLNavigationController : UINavigationController <UIGestureRecognizerDelegate>
+/** 右滑返回开关，default: YES */
+@property (nonatomic,assign) BOOL canDragBack;
+
+//- (void)hiddenSearchView;
+@end

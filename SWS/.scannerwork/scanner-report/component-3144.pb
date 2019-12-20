@@ -1,0 +1,1 @@
+ÈPSWS/Classes/QrCode(äºŒç»´ç )/Controllers/SW_BarCodeScanViewViewController.swift 2swiftXûh

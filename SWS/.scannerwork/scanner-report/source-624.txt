@@ -1,0 +1,134 @@
+/************************************************************
+ *  * Hyphenate CONFIDENTIAL
+ * __________________
+ * Copyright (C) 2016 Hyphenate Inc. All rights reserved.
+ *
+ * NOTICE: All information contained herein is, and remains
+ * the property of Hyphenate Inc.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Hyphenate Inc.
+ */
+
+#import <MAMapKit/MAMapKit.h>
+#import "EaseBubbleView+Location.h"
+
+@implementation EaseBubbleView (Location)
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+}
+
+#pragma mark - private
+
+- (void)_setupLocationBubbleMarginConstraints
+{
+    NSLayoutConstraint *marginTopConstraint = [NSLayoutConstraint constraintWithItem:self.mapView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.backgroundImageView attribute:NSLayoutAttributeTop multiplier:1.0 constant:self.margin.top];
+    NSLayoutConstraint *marginBottomConstraint = [NSLayoutConstraint constraintWithItem:self.mapView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.backgroundImageView attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-self.margin.bottom];
+    NSLayoutConstraint *marginLeftConstraint = [NSLayoutConstraint constraintWithItem:self.mapView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.backgroundImageView attribute:NSLayoutAttributeRight multiplier:1.0 constant:-self.margin.right];
+    NSLayoutConstraint *marginRightConstraint = [NSLayoutConstraint constraintWithItem:self.mapView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.backgroundImageView attribute:NSLayoutAttributeLeft multiplier:1.0 constant:self.margin.left];
+    marginLeftConstraint.priority = 900;
+    marginRightConstraint.priority = 900;
+    
+    NSLayoutConstraint *heightConstraint = [NSLayoutConstraint constraintWithItem:self.locationImageView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:44];
+    NSLayoutConstraint *bottomConstraint = [NSLayoutConstraint constraintWithItem:self.locationImageView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.backgroundImageView attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-self.margin.bottom];
+    NSLayoutConstraint *rightConstraint = [NSLayoutConstraint constraintWithItem:self.locationImageView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.backgroundImageView attribute:NSLayoutAttributeRight multiplier:1.0 constant:-self.margin.right];
+    NSLayoutConstraint *leftConstraint = [NSLayoutConstraint constraintWithItem:self.locationImageView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.backgroundImageView attribute:NSLayoutAttributeLeft multiplier:1.0 constant:self.margin.left];
+    rightConstraint.priority = 900;
+    leftConstraint.priority = 900;
+    
+    [self.marginConstraints removeAllObjects];
+    [self.marginConstraints addObject:marginTopConstraint];
+    [self.marginConstraints addObject:marginBottomConstraint];
+    [self.marginConstraints addObject:marginLeftConstraint];
+    [self.marginConstraints addObject:marginRightConstraint];
+    
+    [self.marginConstraints addObject:heightConstraint];
+    [self.marginConstraints addObject:bottomConstraint];
+    [self.marginConstraints addObject:leftConstraint];
+    [self.marginConstraints addObject:rightConstraint];
+    
+    [self addConstraints:self.marginConstraints];
+}
+
+- (void)_setupLocationBubbleConstraints:(BOOL)isSender
+{
+    [self _setupLocationBubbleMarginConstraints];
+    
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.locationLabel attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.locationImageView attribute:NSLayoutAttributeTop multiplier:1.0 constant:4]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.locationLabel attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.locationImageView attribute:NSLayoutAttributeRight multiplier:1.0 constant:isSender? -20:-15]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.locationLabel attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.locationImageView attribute:NSLayoutAttributeLeft multiplier:1.0 constant:isSender? 15:20]];
+    
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.locationLabel attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:18]];
+    
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.addressLabel attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.locationLabel attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.addressLabel attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.locationImageView attribute:NSLayoutAttributeRight multiplier:1.0 constant:isSender? -20:-15]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.addressLabel attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.locationImageView attribute:NSLayoutAttributeLeft multiplier:1.0 constant:isSender? 15:20]];
+    
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.addressLabel attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:16]];
+}
+
+#pragma mark - public
+
+- (void)setupLocationBubbleView:(BOOL)isSender
+{
+    self.mapView = [[MAMapView alloc] init];
+    self.mapView.showsCompass = NO;
+    self.mapView.delegate = self;
+    self.mapView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.backgroundImageView addSubview:self.mapView];
+    
+    self.locationImageView = [[UIImageView alloc] init];
+    self.locationImageView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.locationImageView.backgroundColor = [UIColor clearColor];
+    self.locationImageView.clipsToBounds = YES;
+    [self.backgroundImageView addSubview:self.locationImageView];
+    
+    self.locationLabel = [[UILabel alloc] init];
+    self.locationLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.locationImageView addSubview:self.locationLabel];
+    
+    self.addressLabel = [[UILabel alloc] init];
+    self.addressLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.locationImageView addSubview:self.addressLabel];
+    
+    [self _setupLocationBubbleConstraints:isSender];
+}
+
+- (void)updateLocationMargin:(UIEdgeInsets)margin
+{
+    if (_margin.top == margin.top && _margin.bottom == margin.bottom && _margin.left == margin.left && _margin.right == margin.right) {
+        return;
+    }
+    _margin = margin;
+    
+    [self removeConstraints:self.marginConstraints];
+    [self _setupLocationBubbleMarginConstraints];
+}
+
+-(void)setMapViewLocation:(CLLocationCoordinate2D)locationCoordinate
+{
+    [self.mapView removeAnnotations:self.mapView.annotations];
+    MAPointAnnotation *anno = [[MAPointAnnotation alloc] init];
+    anno.coordinate = locationCoordinate;
+    [self.mapView addAnnotation:anno];
+    [self.mapView setCenterCoordinate:locationCoordinate animated:NO];
+    [self.mapView setZoomLevel:14.25 animated:NO];
+}
+
+#pragma mark - mamapviewdelegate
+- (MAAnnotationView *)mapView:(MAMapView *)mapView viewForAnnotation:(id<MAAnnotation>)annotation
+{
+    if ([annotation isKindOfClass:[MAUserLocation class]]) {
+        return nil;
+    }
+    
+    MAAnnotationView *annoView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"annotationViewId"];
+    if (annoView == nil) {
+        annoView = [[MAAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"annotationViewId"];
+    }
+    annoView.image = [UIImage imageNamed:@"wateRedBlank"];
+    annoView.enabled = NO;
+    return annoView;
+}
+@end

@@ -1,0 +1,1 @@
+Ç	QPods/Target Support Files/NVActivityIndicatorView/NVActivityIndicatorView-dummy.m 2objcXh

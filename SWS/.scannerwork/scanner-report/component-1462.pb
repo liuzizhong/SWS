@@ -1,0 +1,1 @@
+¶NPods/AMapFoundation-NO-IDFA/AMapFoundationKit.framework/Headers/AMapServices.h 2objcX h

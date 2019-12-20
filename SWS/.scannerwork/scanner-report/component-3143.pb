@@ -1,0 +1,1 @@
+«SWS/Classes/QrCode(‰∫åÁª¥Á†Å) :∆

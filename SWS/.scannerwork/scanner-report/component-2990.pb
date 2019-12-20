@@ -1,0 +1,1 @@
+®OPods/AMapLocation-NO-IDFA/AMapLocationKit.framework/Headers/AMapGeoFenceError.h 2objcXh

@@ -1,0 +1,1 @@
+°UPods/AMapFoundation-NO-IDFA/AMapFoundationKit.framework/Headers/AMapURLSearchConfig.h 2objcXPh

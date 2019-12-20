@@ -1,0 +1,1 @@
+�OSWS/Classes/PlateRecognition(车牌识别)/HyperLPR/include/PlateSegmentation.h 2objcX$h
